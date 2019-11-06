@@ -9,7 +9,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Dit Pusterum"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/white_appicon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

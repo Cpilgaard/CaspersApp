@@ -14,11 +14,16 @@ class ListSoundFiles extends StatelessWidget {
 }
 
 List<SoundFile> soundFiles = [
-  SoundFile("music/Test.mp3", "assets/images/Cup.png", "Godmorgen", "Siddende afspænding (6:12 min)"),
-  SoundFile("music/Test2.mp3", "assets/images/Stop.png", "Stop op", "Siddende afspænding (10:56 min)"),
-  SoundFile("music/Test3.mp3", "assets/images/Walking.png", "Frokostpausen", "Gående afspænding (5:21 min)"),
-  SoundFile("music/Test3.mp3", "assets/images/Cloud-Bubble.png", "Dagens pusterum", "Liggende afspænding (15:24 min)"),
-  SoundFile("music/Test3.mp3", "assets/images/Sleeping.png", "Sov godt", "Liggende afspænding (21:09 min)")
+  SoundFile("music/Godmorgen.mp3", "assets/images/Cup.png", "Godmorgen",
+      "Stående afspænding (11:27 min)"),
+  SoundFile("music/Frokostpausen.mp3", "assets/images/Walking.png",
+      "Frokostpausen", "Gående afspænding (10:52 min)"),
+  SoundFile("music/DagensPusterum.mp3", "assets/images/Cloud-Bubble.png",
+      "Dagens pusterum", "Siddende afspænding (9:11 min)"),
+  SoundFile("music/StopOp.mp3", "assets/images/Stop.png", "Stop op",
+      "Liggende afspænding (12:11 min)"),
+  SoundFile("music/Sovgodt.mp3", "assets/images/Sleeping.png", "Sov godt",
+      "Liggende afspænding (12:16 min)"),
 ];
 
 class BodyWidget extends StatelessWidget {
@@ -31,8 +36,9 @@ class BodyWidget extends StatelessWidget {
             leading: CircleAvatar(
               backgroundImage: AssetImage(soundFiles[index].imagepath),
             ),
-            title: Text(soundFiles[index].title, style: TextStyle(fontSize: 20)),   
-            subtitle: Text(soundFiles[index].description),         
+            title:
+                Text(soundFiles[index].title, style: TextStyle(fontSize: 20)),
+            subtitle: Text(soundFiles[index].description),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
