@@ -24,9 +24,8 @@ class _PlaySongState extends State<PlaySong> {
 
   AudioCache audioCache;
 
-  get durationText => duration != null
-      ? (duration + Duration(seconds: 1)).toString().split('.').first
-      : '';
+  get durationText =>
+      duration != null ? (duration).toString().split('.').first : '';
   get positionText =>
       position != null ? position.toString().split('.').first : '';
 
@@ -46,6 +45,13 @@ class _PlaySongState extends State<PlaySong> {
     audioPlayer.positionHandler = (p) => setState(() {
           position = p;
           prefs.setInt(soundFile.title, position.inSeconds);
+          if (duration.inSeconds == position.inSeconds) {
+            setState(() {
+              position = new Duration(seconds: 0);
+              pause();
+            });
+            audioPlayer.seek(position);
+          }
         });
   }
 

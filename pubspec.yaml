@@ -17,7 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  flutter_launcher_icons: ^0.7.2+1
+  flutter_launcher_icons: ^0.7.4
   audioplayers: ^0.8.0
   shared_preferences: ^0.5.3+1
   flutter:
@@ -28,9 +28,9 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 flutter_icons:
-  android: "black2"
+  android: "launcher_icon"
   ios: true
-  image_path: "assets/images/black.png"
+  image_path: "assets/icons/transparentIcon.png"
 
 dev_dependencies:
   flutter_test:

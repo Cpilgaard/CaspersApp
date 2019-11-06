@@ -7,6 +7,7 @@ import 'Forside.dart';
 
 void main() async {
   // fix screen orientation
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(new MaterialApp(
