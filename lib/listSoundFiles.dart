@@ -15,15 +15,15 @@ class ListSoundFiles extends StatelessWidget {
 
 List<SoundFile> soundFiles = [
   SoundFile("music/Godmorgen.mp3", "assets/images/Cup.png", "Godmorgen",
-      "Stående afspænding (11:27 min)"),
+      "Stående afspænding \n" + "11:27 min"),
   SoundFile("music/Frokostpausen.mp3", "assets/images/Walking.png",
-      "Frokostpausen", "Gående afspænding (10:52 min)"),
+      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
   SoundFile("music/DagensPusterum.mp3", "assets/images/Cloud-Bubble.png",
-      "Dagens pusterum", "Siddende afspænding (9:11 min)"),
-  SoundFile("music/StopOp.mp3", "assets/images/Stop.png", "Stop op",
-      "Liggende afspænding (12:11 min)"),
-  SoundFile("music/Sovgodt.mp3", "assets/images/Sleeping.png", "Sov godt",
-      "Liggende afspænding (12:16 min)"),
+      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
+  SoundFile("music/StopopV1.1.mp3", "assets/images/Stop.png", "Stop op",
+      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile("music/SovgodtV1.1.mp3", "assets/images/Sleeping.png", "Sov godt",
+      "Liggende afspænding \n" + "12:16 min"),
 ];
 
 class BodyWidget extends StatelessWidget {

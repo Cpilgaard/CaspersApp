@@ -57,13 +57,6 @@ class ForsideState extends State<Forside> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Dit Pusterum',
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold),
-            ),
             SizedBox(
               width: sizedWidth,
               height: sizedHeight,
