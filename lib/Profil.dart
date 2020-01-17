@@ -21,7 +21,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
         child: new Column(          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Image.asset('assets/images/Malene.jpg'),
+            new Image.asset('assets/images/MarleneNy.png'),
             new SizedBox(height: 20),
             Text(
               "Beskrivelse:",
@@ -40,7 +40,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             ),
             SizedBox(height: 5),
             Text(
-              "Marlene Biegel, Aarhus \n" +
+              "Marlene Biegel \n" +
                   "Mail: biegel@mail.dk \n" +
                   "Tlf. 22226127 ",
               style: new TextStyle(fontSize: 16.0),
