@@ -98,10 +98,6 @@ class _PlaySongState extends State<PlaySong> {
     audioPlayer = null;
     super.dispose();
   }
- //leading: CircleAvatar(
-  //              backgroundImage: AssetImage(soundFiles[index].imagepath),
-  //            ),
-  //Image.asset(soundFile.imagepath)
   @override
   Widget build(BuildContext context) {
     Widget _buildPlayer() => new Container(

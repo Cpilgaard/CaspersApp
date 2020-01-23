@@ -32,7 +32,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
               "Denne app tager udgangspunkt i min uddannelse som professions bachelor i afspændingspædagogik og psykomotorik. Afspændingssekvenserne er udarbejdet og inspireret ud fra min erfaring med undervisning inden for afspændingspædagogikken igennem de sidste 11 år.\n" +
                   "I disse år har jeg erhvervet mig en solid portion erfaring og viden omkring, hvad det vil sige at arbejde med mennesker, at opbygge relationer og samtidig være motiverende i den enkeltes udviklingsproces. " +
                   "Mine kerneydelser er individuelle samtaler med fokus på trivsel, udvikling og egne ressourcer. Samt teoretisk og praktisk gruppeundervisning i kropsbevidstheds-\n" + "træning, afspænding for krop og sind, meditation og stressforebyggelse.\n",
-              style: new TextStyle(fontSize: 16.0),
+              style: new TextStyle(color: Colors.black, fontSize: 16.0),
             ),
             Text(
               "Kontaktoplysninger:",
@@ -43,7 +43,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
               "Marlene Biegel \n" +
                   "Mail: biegel@mail.dk \n" +
                   "Tlf. 22226127 ",
-              style: new TextStyle(fontSize: 16.0),
+              style: new TextStyle(color: Colors.black, fontSize: 16.0),
             ),
             SizedBox(height: 10)
           ],
