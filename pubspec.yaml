@@ -29,13 +29,19 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 flutter_icons:
+  image_path: "assets/icons/white_appicon_trimmed.png"
   android: "white_appicon"
   ios: true
-  image_path: "assets/icons/white_appicon.png"
 
 dev_dependencies:
+  flutter_native_splash: ^0.1.9
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  image: assets/icons/launcher.png
+  color: "#ffffff"
+  android: false
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
