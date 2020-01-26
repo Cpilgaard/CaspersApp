@@ -39,7 +39,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_native_splash:
-  image: assets/icons/launcher.png
+  image: assets/icons/test2.png
   color: "#ffffff"
   android: false
 
