@@ -126,6 +126,8 @@ class ForsideState extends State<Forside> {
   }
 }
 
+//De 3 linjer på forsiden mellem cirklerne.
+
 class Drawhorizontalline extends CustomPainter {
   Paint _paint;
 

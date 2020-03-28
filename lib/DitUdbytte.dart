@@ -24,6 +24,7 @@ class DitUdbytteState extends State<DitUdbytte> {
             Container(
               child: RichText(
                 text: TextSpan(
+                  // Gør overskriften til blå og større size end resten af teksten
                   text: "App'en " , style: TextStyle(color: Colors.blue, fontSize: 20),
                   children: <TextSpan>[
                     TextSpan(text: "henvender sig til alle voksne mennesker, som har lyst til at give sig selv og sin krop en pause fra hverdagens gøremål. Formålet er at have mulighed for at gå ”offline” og dermed lukke af for hverdagens larm, uanset hvor du befinder dig.\n\n" +
