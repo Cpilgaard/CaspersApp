@@ -44,6 +44,8 @@ class ForsideState extends State<Forside> {
     super.initState();
   }
 
+  // Can this change be seen?
+
   double sizedWidth = 40.0;
   double sizedHeight = 40.0;
   double buttonHeight = 130.0;
