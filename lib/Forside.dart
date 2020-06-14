@@ -9,7 +9,9 @@ RateMyApp _rateMyApp = RateMyApp(
   minDays: 0,
   minLaunches: 3,
   remindDays: 1,
-  remindLaunches: 1,
+  remindLaunches: 3,
+  googlePlayIdentifier: 'biegel.DitPusterum',
+  appStoreIdentifier: '1489489646',
 );
 
 class Forside extends StatefulWidget {
@@ -123,6 +125,8 @@ class ForsideState extends State<Forside> {
     );
   }
 }
+
+//De 3 linjer på forsiden mellem cirklerne.
 
 class Drawhorizontalline extends CustomPainter {
   Paint _paint;
