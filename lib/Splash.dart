@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'Forside.dart';
+import 'package:testpust/listSoundFiles.dart';
+import 'listSoundFiles.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class SplashPageState extends State<SplashPage> {
 // THIS FUNCTION WILL NAVIGATE FROM SPLASH SCREEN TO HOME SCREEN.    // USING NAVIGATOR CLASS.
 
   void navigationToNextPage() {
-    Navigator.pushNamed(context, Forside.tag);
+    Navigator.pushNamed(context, ListSoundFiles.tag);
   }
 
   startSplashScreenTimer() async {

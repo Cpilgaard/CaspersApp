@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+//import 'package:testpust/listSoundFiles.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
 import 'ListSoundFiles.dart';
@@ -12,7 +13,7 @@ void main() async {
 
   runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: new Forside(),
+    home: new ListSoundFiles(),
     routes: <String, WidgetBuilder>{
       DitUdbytte.tag: (BuildContext context) => new DitUdbytte(),
       ListSoundFiles.tag: (BuildContext context) => new ListSoundFiles(),
