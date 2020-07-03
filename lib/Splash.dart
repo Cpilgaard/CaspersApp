@@ -35,6 +35,6 @@ class SplashPageState extends State<SplashPage> {
 
     // full screen image for splash screen.
     return Container(
-        child: new Image.asset('assets/icons/800a.png', fit: BoxFit.fitHeight));
+        child: new Image.asset('', fit: BoxFit.fitHeight));
   }
 }

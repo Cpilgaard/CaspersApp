@@ -135,6 +135,7 @@ class _PlaySongState extends State<PlaySong> {
         ]));
     return new Scaffold(
         appBar: AppBar(title: Text(soundFile.title)),
-        body: new Container(child: _buildPlayer()));
+        body: new Container(child: _buildPlayer(),
+        ));
   }
 }

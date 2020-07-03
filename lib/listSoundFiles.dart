@@ -3,6 +3,7 @@ import 'PlaySong.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
+
 RateMyApp _rateMyApp = RateMyApp(
   preferencesPrefix: 'rateMyApp_',
   minDays: 0,
@@ -40,104 +41,378 @@ class ListSoundFilesState extends State<ListSoundFiles> {
     });
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Afspændingssekvenser'),
-      ),
-      body: _buildListSoundFiles(),
+        appBar: AppBar(
+          title: Text('Afspændingssekvenser')
+        ),
+        body: new Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+            image: AssetImage('assets/images/Baggrund.png'),
+            fit: BoxFit.fill,
+            )
+          ) ,
+            child: new Center(
+              child: new SingleChildScrollView(
+                padding: EdgeInsets.all(60.0),
+                 child: new Column(
+                  children: <Widget>[
+                    //Card for Godmorgen.
+                    _CardGodmorgen(),
+                    //Card for Frokostpause
+                    _CardFrokostPausen(),
+                    // Card for DAGENS PUSTERUM
+                    _CardDagensPusterum(),
+                    // Card for STOP OP
+                    _CardStopOp(),
+                    //Card for SOV GODT
+                    _CardSovGodt()
+
+    ]
+    )
+    )
+    )
+        )
     );
+
+
+
   }
-  
-  Widget _buildListSoundFiles() {
-    return new ListView.builder(
-      itemCount: soundFiles.length,
-      itemBuilder: (context, index) {
-        return ListTile (
-          leading: CircleAvatar(
-            backgroundImage: AssetImage(soundFiles[index].imagepath),
-          ),
-          title:
-          Text(soundFiles[index].title, style: TextStyle(fontSize: 20)),
-          subtitle: Text(soundFiles[index].description),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => PlaySong(soundFile: soundFiles[index]),
+
+  Widget _CardGodmorgen() {
+    return new Card(
+        color: Color.fromRGBO(241, 242, 245, 0.6),
+        child: new Container(
+            child: new Container(
+              padding: EdgeInsets.all(10.0),
+              child: ExpansionTile(
+                  title: Text("Godmorgen"),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage(soundFiles[0].imagepath),
+                  ),
+                  children: <Widget>[
+                    //Container for 1.lydfil til kategori GODMORGEN
+                    new Container(
+                        padding: new EdgeInsets.all(10.0),
+                        child: ListTile(
+                            title: Text(soundFiles[0].title),
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage(soundFiles[0].imagepath),
+                            ),
+                            subtitle: Text(soundFiles[0].description),
+                            trailing: Icon(Icons.keyboard_arrow_right),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          PlaySong(
+                                              soundFile: SoundFile(soundFiles[0].filepath, soundFiles[0].imagepath, soundFiles[0].title, soundFiles[0].description)
+                                          )
+                                  )
+                              );
+                            }
+                        )
+                    ),
+                    // Container for 2.lydfil til kategori GODMORGEN
+                    new Container(
+                        padding: new EdgeInsets.all(10.0),
+                        child: ListTile(
+                            title: Text("Godmorgen2"),
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage('assets/images/CupWhite.png'),
+                            ),
+                            subtitle: Text("Stående afspænding \n" + "11:27 min"),
+                            trailing: Icon(Icons.keyboard_arrow_right),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        PlaySong(
+                                            soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
+                                                "Stående afspænding \n" + "11:27 min") ),
+                                  )
+                              );
+                            }
+                        )
+                    )
+                  ]
               ),
-            );
-          },
-        );
-      },
+            )
+        )
     );
   }
-}
 
 
-
-List<SoundFile> soundFiles = [
-  SoundFile("music/Godmorgen.mp3", "assets/images/CupWhite.png", "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/WalkingWhite.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/CloudBubbleWhite.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopWhite.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
-  SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SleepingWhite.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
-];
-
-
-
-
-
-/*class ListSoundFiles extends StatelessWidget {
-  static String tag = 'ListSound';
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Afspændingssekvenser')),
-      body: BodyWidget(),
-    );
-  }
-}
-
-
-class BodyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return (ListView.builder(
-        itemCount: soundFiles.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage(soundFiles[index].imagepath),
-            ),
-            title:
-            Text(soundFiles[index].title, style: TextStyle(fontSize: 20)),
-            subtitle: Text(soundFiles[index].description),
-            trailing: Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PlaySong(soundFile: soundFiles[index]),
+  Widget _CardFrokostPausen() {
+    return new Card(
+      color: Color.fromRGBO(241, 242, 245, 0.6),
+      child: new Container(
+        padding: new EdgeInsets.all(10.0),
+        child: new Container(
+          child: ExpansionTile(
+              title: Text("Frokostpausen"),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(soundFiles[1].imagepath),
+              ),
+              children: <Widget>[
+                //Container for 1.lydfil for kategori FROKOSTPAUSEN
+                new Container(
+                    padding: new EdgeInsets.all(5.0),
+                    child: ListTile(
+                        title: Text(soundFiles[1].title),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[1].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[1].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlaySong(
+                                          soundFile: SoundFile(soundFiles[1].filepath, soundFiles[1].imagepath, soundFiles[1].title, soundFiles[1].description)
+                                      )
+                              )
+                          );
+                        }
+                    )
                 ),
-              );
-            },
-          );
-        }));
+                // Container for 2.lydfil til kategori FROKOSTPAUSEN
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text("Frokost2"),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[1].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[1].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    PlaySong(
+                                        soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
+                                            "Stående afspænding \n" + "11:27 min") ),
+                              )
+                          );
+                        }
+                    )
+                )
+              ]
+          ),
+        ),
+      ),
+    );
   }
 
+  Widget _CardDagensPusterum() {
+    return new Card(
+      color: Color.fromRGBO(241, 242, 245, 0.6),
+      child: new Container(
+        padding: new EdgeInsets.all(10.0),
+        child: new Container(
+          child: ExpansionTile(
+              title: Text("Dages Pusterum"),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(soundFiles[2].imagepath),
+              ),
+              children: <Widget>[
+                //Container for 1.lydfil for kategori DAGENS PUSTERUM
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text(soundFiles[2].title),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[2].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[1].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlaySong(
+                                          soundFile: SoundFile(soundFiles[2].filepath, soundFiles[2].imagepath, soundFiles[2].title, soundFiles[2].description)
+                                      )
+                              )
+                          );
+                        }
+                    )
+                ),
+                // Container for 2.lydfil til kategori DAGENS PUSTERUM
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text("Dagens Pusterum2"),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[2].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[2].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    PlaySong(
+                                        soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
+                                            "Stående afspænding \n" + "11:27 min") ),
+                              )
+                          );
+                        }
+                    )
+                )
+              ]
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget _CardStopOp() {
+    return new Card(
+      color: Color.fromRGBO(241, 242, 245, 0.6),
+      child: new Container(
+        padding: new EdgeInsets.all(10.0),
+        child: new Container(
+          child: ExpansionTile(
+              title: Text(soundFiles[3].title),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(soundFiles[3].imagepath),
+              ),
+              children: <Widget>[
+                //Container for 1.lydfil for kategori STOP OP
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text(soundFiles[3].title),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[3].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[3].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlaySong(
+                                          soundFile: SoundFile(soundFiles[3].filepath, soundFiles[3].imagepath, soundFiles[3].title, soundFiles[3].description)
+                                      )
+                              )
+                          );
+                        }
+                    )
+                ),
+                // Container for 2.lydfil til kategori STOP OP
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text("Stop OP2"),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[3].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[3].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    PlaySong(
+                                        soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
+                                            "Stående afspænding \n" + "11:27 min") ),
+                              )
+                          );
+                        }
+                    )
+                )
+              ]
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _CardSovGodt() {
+    return new Card(
+      color: Color.fromRGBO(241, 242, 245, 0.6),
+      child: new Container(
+        padding: new EdgeInsets.all(10.0),
+        child: new Container(
+          child: ExpansionTile(
+              title: Text(soundFiles[4].title),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(soundFiles[4].imagepath),
+              ),
+              children: <Widget>[
+                //Container for 1.lydfil for kategori SOV GODT
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text(soundFiles[4].title),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[4].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[4].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlaySong(
+                                          soundFile: SoundFile(soundFiles[4].filepath, soundFiles[4].imagepath, soundFiles[4].title, soundFiles[4].description)
+                                      )
+                              )
+                          );
+                        }
+                    )
+                ),
+                // Container for 2.lydfil til kategori SOV GODT
+                new Container(
+                    padding: new EdgeInsets.all(10.0),
+                    child: ListTile(
+                        title: Text("Sov godt2"),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(soundFiles[4].imagepath),
+                        ),
+                        subtitle: Text(soundFiles[4].description),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    PlaySong(
+                                        soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
+                                            "Stående afspænding \n" + "11:27 min") ),
+                              )
+                          );
+                        }
+                    )
+                )
+              ]
+          ),
+        ),
+      ),
+    );
+  }
+
+}
 
   List<SoundFile> soundFiles = [
-    SoundFile("music/Godmorgen.mp3", "assets/images/CupWhite.png", "Godmorgen",
+    SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
         "Stående afspænding \n" + "11:27 min"),
     SoundFile("music/Frokostpausen.mp3", "assets/images/WalkingWhite.png",
         "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
@@ -149,4 +424,3 @@ class BodyWidget extends StatelessWidget {
         "music/SovgodtV1.1.mp3", "assets/images/SleepingWhite.png", "Sov godt",
         "Liggende afspænding \n" + "12:16 min"),
   ];
-}*/
