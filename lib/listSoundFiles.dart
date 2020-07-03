@@ -46,12 +46,14 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Afspændingssekvenser')
+          title: Text('Afspændingssekvenser'),
+          //TODO add backgroundColor and opacity. What colour should the text be?
+          backgroundColor: Color.fromRGBO(48, 121, 169, 1.0)
         ),
         body: new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-            image: AssetImage('assets/images/Baggrund.png'),
+            image: AssetImage('assets/images/Baggrundtest.png'),
             fit: BoxFit.fill,
             )
           ) ,
@@ -61,28 +63,58 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                  child: new Column(
                   children: <Widget>[
                     //Card for Godmorgen.
-                    _CardGodmorgen(),
+                    _cardGodmorgen(),
                     //Card for Frokostpause
-                    _CardFrokostPausen(),
+                    _cardFrokostPausen(),
                     // Card for DAGENS PUSTERUM
-                    _CardDagensPusterum(),
+                    _cardDagensPusterum(),
                     // Card for STOP OP
-                    _CardStopOp(),
+                    _cardStopOp(),
                     //Card for SOV GODT
-                    _CardSovGodt()
+                    _cardSovGodt()
+                  ]
+                 )
+              )
+            )
+        ),
+      bottomNavigationBar: new Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Color.fromRGBO(48, 121, 169, 1.0)
+        ),
+        child: new BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem> [
+          new BottomNavigationBarItem(
+            //TODO Redirect to Facebook
+              icon: Icon(Icons.build, color: Color.fromRGBO(241, 242, 245, 0.6)),
+              title: Text(''),
+          ),
+          new BottomNavigationBarItem(
+            //TODO redirect to Instagram
+              icon: Icon(Icons.title, color: Color.fromRGBO(241, 242, 245, 0.6)),
+              title: new Text('')
+          ),
+          new BottomNavigationBarItem(
+            //TODO redirect to Formål page
+            icon: Icon(Icons.info, color: Color.fromRGBO(241, 242, 245, 0.6)),
+            title: new Text('')
+          ),
+          new BottomNavigationBarItem(
+            //TODO redirect to Erfaringsgrundlag page
+              icon: Icon(Icons.person, color: Color.fromRGBO(241, 242, 245, 0.6)),
+              title: new Text(''),
 
-    ]
-    )
-    )
-    )
-        )
-    );
-
+          ),
+        ],
+      ),
+      )
+      );
 
 
   }
 
-  Widget _CardGodmorgen() {
+
+  Widget _cardGodmorgen() {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.6),
         child: new Container(
@@ -148,7 +180,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   }
 
 
-  Widget _CardFrokostPausen() {
+  Widget _cardFrokostPausen() {
     return new Card(
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
@@ -213,7 +245,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
     );
   }
 
-  Widget _CardDagensPusterum() {
+  Widget _cardDagensPusterum() {
     return new Card(
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
@@ -279,7 +311,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   }
 
 
-  Widget _CardStopOp() {
+  Widget _cardStopOp() {
     return new Card(
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
@@ -344,7 +376,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
     );
   }
 
-  Widget _CardSovGodt() {
+  Widget _cardSovGodt() {
     return new Card(
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
