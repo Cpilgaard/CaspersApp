@@ -1,3 +1,6 @@
+import 'package:testpust/DitUdbytte.dart';
+import 'package:testpust/Profil.dart';
+
 import 'soundfile.dart';
 import 'PlaySong.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +25,7 @@ class ListSoundFiles extends StatefulWidget {
 }
 
 class ListSoundFilesState extends State<ListSoundFiles> {
+  int _currentIndex = 0;
   void initState() {
     _rateMyApp.init().then((_) {
       //To test the implementation of the showRateDialog, uncomment this if statement
@@ -48,7 +52,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
         appBar: AppBar(
           title: Text('Afspændingssekvenser'),
           //TODO add backgroundColor and opacity. What colour should the text be?
-          backgroundColor: Color.fromRGBO(48, 121, 169, 1.0)
+          backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
           decoration: BoxDecoration(
@@ -82,34 +86,53 @@ class ListSoundFilesState extends State<ListSoundFiles> {
           canvasColor: Color.fromRGBO(48, 121, 169, 1.0)
         ),
         child: new BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem> [
-          new BottomNavigationBarItem(
-            //TODO Redirect to Facebook
+          // Gets the index of the pressed item. Switch case is used for redirecting to
+          // the different pages
+          currentIndex: _currentIndex,
+          onTap: (int index) {
+            switch(index){
+              case 0:
+                //TODO Redirect to Facebook
+                break;
+              case 1:
+                //TODO Redirect to Instagram
+                break;
+              case 2:
+                // Redirects to Dit Udbytte / Formål
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
+                  break;
+              case 3:
+              // Redirects to Erfaringsgrundlag
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
+                break;
+            }
+          },
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem> [
+            new BottomNavigationBarItem(
+            //FACEBOOK
               icon: Icon(Icons.build, color: Color.fromRGBO(241, 242, 245, 0.6)),
               title: Text(''),
           ),
-          new BottomNavigationBarItem(
+            new BottomNavigationBarItem(
             //TODO redirect to Instagram
               icon: Icon(Icons.title, color: Color.fromRGBO(241, 242, 245, 0.6)),
               title: new Text('')
           ),
-          new BottomNavigationBarItem(
+            new BottomNavigationBarItem(
             //TODO redirect to Formål page
             icon: Icon(Icons.info, color: Color.fromRGBO(241, 242, 245, 0.6)),
-            title: new Text('')
+            title: new Text(''),
           ),
-          new BottomNavigationBarItem(
+            new BottomNavigationBarItem(
             //TODO redirect to Erfaringsgrundlag page
               icon: Icon(Icons.person, color: Color.fromRGBO(241, 242, 245, 0.6)),
               title: new Text(''),
-
           ),
         ],
-      ),
+        ),
       )
-      );
-
+    );
 
   }
 
@@ -118,7 +141,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.6),
         child: new Container(
-            child: new Container(
               padding: EdgeInsets.all(10.0),
               child: ExpansionTile(
                   title: Text("Godmorgen"),
@@ -174,7 +196,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                     )
                   ]
               ),
-            )
         )
     );
   }
@@ -185,7 +206,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
         padding: new EdgeInsets.all(10.0),
-        child: new Container(
           child: ExpansionTile(
               title: Text("Frokostpausen"),
               leading: CircleAvatar(
@@ -240,7 +260,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 )
               ]
           ),
-        ),
       ),
     );
   }
@@ -250,7 +269,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
         padding: new EdgeInsets.all(10.0),
-        child: new Container(
           child: ExpansionTile(
               title: Text("Dages Pusterum"),
               leading: CircleAvatar(
@@ -305,7 +323,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 )
               ]
           ),
-        ),
       ),
     );
   }
@@ -316,7 +333,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
         padding: new EdgeInsets.all(10.0),
-        child: new Container(
           child: ExpansionTile(
               title: Text(soundFiles[3].title),
               leading: CircleAvatar(
@@ -371,7 +387,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 )
               ]
           ),
-        ),
       ),
     );
   }
@@ -381,7 +396,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       color: Color.fromRGBO(241, 242, 245, 0.6),
       child: new Container(
         padding: new EdgeInsets.all(10.0),
-        child: new Container(
           child: ExpansionTile(
               title: Text(soundFiles[4].title),
               leading: CircleAvatar(
@@ -436,7 +450,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 )
               ]
           ),
-        ),
       ),
     );
   }
