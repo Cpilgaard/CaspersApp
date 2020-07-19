@@ -106,43 +106,60 @@ class _PlaySongState extends State<PlaySong> {
         new Container(
             decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/Baggrundtest.png'),
+              image: AssetImage('assets/images/BaggrundNY.png'),
               fit: BoxFit.fill,
             )
         ),
-            padding: new EdgeInsets.all(20.0),
-            child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              new CircleAvatar(backgroundImage: AssetImage(soundFile.imagepath)),
-              new Text(
-                soundFile.title,
-                style: Theme.of(context).textTheme.headline,
-              ),
-              new Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-              ),
-              new IconButton(
-                onPressed: isPlaying ? () => pause() : () => resume(),
-                iconSize: 50.0,
-                icon: new Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-                color: Theme.of(context).buttonColor,
-              ),
-              duration == null
-                  ? new Container()
-                  : new Slider(
-                      value: position?.inMilliseconds?.toDouble() ?? 0,
-                      onChanged: (double value) => positionChanged(value),
-                      min: 0.0,
-                      max: duration.inMilliseconds.toDouble() + 1000),
-              new Row(mainAxisSize: MainAxisSize.min, children: [
-                new Text(
-                    position != null
-                        ? "${positionText ?? ''} / ${durationText ?? ''}"
-                        : duration != null ? durationText : '',
-                    // ignore: conflicting_dart_import
-                    style: new TextStyle(fontSize: 24.0, color: Colors.black))
-              ])
-        ]
-        ),
+            //padding: new EdgeInsets.all(100.0),
+            child: new Center(
+                child: new Container(
+                    padding: EdgeInsets.all(5.0),
+                    color: Color.fromRGBO(241, 242, 245, 0.4),
+                    height: 400,
+                    width: 350,
+                    child: new Center(
+                        child: new Container(
+                          padding: EdgeInsets.all(5.0),
+                          color: Color.fromRGBO(241, 242, 245, 0.4),
+                          height: 325,
+                          width: 325,
+                            child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                              new CircleAvatar(backgroundImage: AssetImage(soundFile.imagepath)),
+                              new Text(
+                                soundFile.title,
+                                style: new TextStyle(fontSize: 24.0, color: Color.fromRGBO(46, 91, 140, 1)),
+                              ),
+                              new Padding(
+                                padding: const EdgeInsets.only(bottom: 20.0),
+                              ),
+                              new IconButton(
+                                onPressed: isPlaying ? () => pause() : () => resume(),
+                                iconSize: 50.0,
+                                icon: new Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                                color: Color.fromRGBO(46, 91, 140, 1), //Theme.of(context).buttonColor,
+                              ),
+                              duration == null
+                                  ? new Container()
+                                  : new Slider(
+                                      value: position?.inMilliseconds?.toDouble() ?? 0,
+                                      activeColor: Color.fromRGBO(46, 91, 140, 1),
+                                      onChanged: (double value) => positionChanged(value),
+                                      min: 0.0,
+                                      max: duration.inMilliseconds.toDouble() + 1000),
+                              new Row(mainAxisSize: MainAxisSize.min, children: [
+                                new Text(
+                                    position != null
+                                        ? "${positionText ?? ''} / ${durationText ?? ''}"
+                                        : duration != null ? durationText : '',
+                                    // ignore: conflicting_dart_import
+                                    style: new TextStyle(fontSize: 24.0, color: Color.fromRGBO(46, 91, 140, 1)))
+                              ])
+                            ]
+                            ),
+                          )
+                      )
+                  )
+            )
         );
 
     int _currentIndex = 0;
@@ -183,26 +200,34 @@ class _PlaySongState extends State<PlaySong> {
             type: BottomNavigationBarType.fixed,
             items: <BottomNavigationBarItem> [
               new BottomNavigationBarItem(
-                //Redirects to FACEBOOK
-                icon: Icon(Icons.build, color: Color.fromRGBO(241, 242, 245, 0.6)),
+                //Icon for FB
+                icon: new Image.asset('assets/icons/Facebook.png',
+                  height: 40,
+                  width: 60,),
                 title: Text(''),
               ),
               new BottomNavigationBarItem(
-                //Redirects to INSTAGRAM
-                  icon: Icon(Icons.title, color: Color.fromRGBO(241, 242, 245, 0.6)),
+                //Icon for Instagram
+                  icon: new Image.asset('assets/icons/Instagram.png',
+                    height: 40,
+                    width: 60,),
                   title: new Text('')
               ),
               new BottomNavigationBarItem(
-                // Redirects to Dit Udbytte / Formål
-                icon: Icon(Icons.info, color: Color.fromRGBO(241, 242, 245, 0.6)),
+                //Icon for Formaal page
+                icon: new Image.asset('assets/icons/Formaal.png',
+                  height: 40,
+                  width: 60,),
                 title: new Text(''),
               ),
               new BottomNavigationBarItem(
-                //Redirects to Erfaringsgrundlag page
-                icon: Icon(Icons.person, color: Color.fromRGBO(241, 242, 245, 0.6)),
+                //Icon for Erfaringsgrundlag page
+                icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+                  height: 40,
+                  width: 60,),
                 title: new Text(''),
-            ),
-        ],
+              ),
+            ],
     ),
         )
     );
