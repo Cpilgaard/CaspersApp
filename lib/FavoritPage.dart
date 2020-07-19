@@ -7,6 +7,8 @@ import 'Profil.dart';
 
 
 class FavoritPage extends StatefulWidget {
+
+  //TODO Lav denne side ala PlaySong. Denne klasse skal stå for at bygge selve Favoritsiden - En widget der builder en liste med soundFiles. Enten skal Favoritter være delt op i kategorier eller også skal det være liste, der kan scrolles i (da det jo er muligt at have flæere end 5 favoritter). Spørgsmål til Marlene. Foretrækker nok en liste der kan scrolles i.
   static String tag = 'FavoritPage';
   @override
   State<StatefulWidget> createState() {
