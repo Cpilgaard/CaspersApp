@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/GodmorgenSoundPage.dart';
+import 'package:testpust/soundfile.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
+import 'PlaySong.dart';
 
 
 
 
 class FavoritPage extends StatefulWidget {
+  FavoritPage({Key key, this.soundFile}) : super(key: key);
+
+  final SoundFile soundFile;
 
   //TODO Lav denne side ala PlaySong. Denne klasse skal stå for at bygge selve Favoritsiden - En widget der builder en liste med soundFiles. Enten skal Favoritter være delt op i kategorier eller også skal det være liste, der kan scrolles i (da det jo er muligt at have flæere end 5 favoritter). Spørgsmål til Marlene. Foretrækker nok en liste der kan scrolles i.
+
   static String tag = 'FavoritPage';
   @override
-  State<StatefulWidget> createState() {
-    return FavoritPageState();
-  }
+  _FavoritPageState createState() => _FavoritPageState(soundFile: this.soundFile);
 
 
 
 }
 
-class FavoritPageState extends State<FavoritPage>{
-  int _currentIndex = 0;
+class _FavoritPageState extends State<FavoritPage>{
+  _FavoritPageState({this.soundFile});
+  SoundFile soundFile;
   GodmorgenSoundPage godmorgenSoundPage;
   @override
   Widget build(BuildContext context) {
@@ -45,19 +50,36 @@ class FavoritPageState extends State<FavoritPage>{
                   height: 400,
                   width: 350,
                   child: new Center(
-                    child: new Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
+                      child: new ListView.builder(
+                        itemCount: favFiles.length,
+                        itemBuilder: (context, index) {
+                        return Card(
+                          color: Color.fromRGBO(241, 242, 245, 0.8),
+                            child: new ListTile(
+                              title: Text(favFiles[index].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(favFiles[index].imagepath),
 
-
-                      ],
+                              ),
+                              subtitle: Text("Guidede afspændingsøvelser til den gode start på din dag", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+                              trailing: Icon(Icons.keyboard_arrow_right),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          PlaySong(
+                                              soundFile: favFiles[index]),
+                                    )
+                                );
+                              },
+                        )
+                        );
+                        },
+                      ),
                     ),
                   ),
-
-
                 ),
-
-              )
           ),
           bottomNavigationBar: new Theme(
             data: Theme.of(context).copyWith(
@@ -66,7 +88,6 @@ class FavoritPageState extends State<FavoritPage>{
             child: new BottomNavigationBar(
               // Gets the index of the pressed item. Switch case is used for redirecting to
               // the different pages
-              currentIndex: _currentIndex,
               onTap: (int index) {
                 switch(index){
                   case 0:

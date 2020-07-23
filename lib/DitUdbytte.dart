@@ -19,7 +19,7 @@ class DitUdbytteState extends State<DitUdbytte> {
         title: Text("Formål"),
         actions: <Widget>[
           IconButton(
-          icon: new Image.asset("assets/icons/heartUnfilled.png"),
+          icon: new Image.asset("assets/icons/heartFilledAppBar.png"),
             onPressed: () {
               Navigator.push(
                   context, MaterialPageRoute(
@@ -29,6 +29,7 @@ class DitUdbytteState extends State<DitUdbytte> {
             },
           )
         ],
+          backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
       ),
       body: new Container(
       decoration: BoxDecoration(

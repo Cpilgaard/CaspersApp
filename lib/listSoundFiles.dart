@@ -5,6 +5,7 @@ import 'package:testpust/FavoritPage.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 RateMyApp _rateMyApp = RateMyApp(
@@ -107,10 +108,12 @@ class ListSoundFilesState extends State<ListSoundFiles> {
           onTap: (int index) {
             switch(index){
               case 0:
-                //TODO Redirect to Facebook
+                //Redirects to Facebook
+                launchURL('https://www.facebook.com/casper.pilgaard');
                 break;
               case 1:
-                //TODO Redirect to Instagram
+                //Redirects to Instagram
+                launchURL('https://www.instagram.com/marlene_biegel/');
                 break;
               case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -281,6 +284,16 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   }
 
 
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+
 
 
 
@@ -292,13 +305,13 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   List<SoundFile> soundFiles = [
     SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
         "Stående afspænding \n" + "11:27 min"),
-    SoundFile("music/Frokostpausen.mp3", "assets/images/WalkingWhite.png",
+    SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
         "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-    SoundFile("music/DagensPusterum.mp3", "assets/images/CloudBubbleWhite.png",
+    SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
         "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-    SoundFile("music/StopopV1.1.mp3", "assets/images/StopWhite.png", "Stop op",
+    SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
         "Liggende afspænding \n" + "12:11 min"),
     SoundFile(
-        "music/SovgodtV1.1.mp3", "assets/images/SleepingWhite.png", "Sov godt",
+        "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
         "Liggende afspænding \n" + "12:16 min"),
   ];

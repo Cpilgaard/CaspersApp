@@ -4,6 +4,8 @@ import 'DitUdbytte.dart';
 import 'Profil.dart';
 import 'PlaySong.dart';
 import 'FavoritPage.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class GodmorgenSoundPage extends StatefulWidget {
@@ -18,9 +20,7 @@ class GodmorgenSoundPage extends StatefulWidget {
 }
 
 class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
-  int _currentIndex = 0;
   int index = 0;
-  List<bool> favList = [true];
   FavoritPage favoritPage;
   @override
   Widget build(BuildContext context) {
@@ -48,6 +48,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      cardGodmorgenSoundFile0(index),
                       cardGodmorgenSoundFile1(index)
                   ],
                 ),
@@ -65,14 +66,16 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
           child: new BottomNavigationBar(
             // Gets the index of the pressed item. Switch case is used for redirecting to
             // the different pages
-            currentIndex: _currentIndex,
+            //currentIndex: _currentIndex,
             onTap: (int index) {
               switch(index){
                 case 0:
-                //TODO Redirect to Facebook
+                //Redirects to Facebook
+                  launchURL('https://www.facebook.com/casper.pilgaard');
                   break;
                 case 1:
-                //TODO Redirect to Instagram
+                //Redirects to Instagram
+                  launchURL('https://www.instagram.com/marlene_biegel/');
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -120,34 +123,79 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
+  Widget cardGodmorgenSoundFile0(int index) {
+    return new Card(
+        color: Color.fromRGBO(241, 242, 245, 0.8),
+        child: Slidable(
+          actionPane: SlidableDrawerActionPane(),
+        actionExtentRatio: 0.25,
+            child: new Container(
+              child: ListTile(
+                title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage(godmorgenSoundFiles[0].imagepath),
+
+                ),
+                subtitle: Text(godmorgenSoundFiles[0].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+                trailing: new Image.asset('assets/icons/heartUnfilled.png'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              PlaySong(
+                                  soundFile: godmorgenSoundFiles[0]),
+                        )
+                    );
+                  },
+          ),
+        ),
+          actions: <Widget>[
+            IconSlideAction(
+              caption: "Tilføj til Favorit",
+              color: Color.fromRGBO(241, 242, 245, 0.8),
+                icon: Icons.ac_unit,
+              onTap: () {
+                setState(() {
+                });
+                }
+            ),
+
+          ],
+        ),
+    );
+  }
+
   Widget cardGodmorgenSoundFile1(int index) {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: new Container(
           child: ListTile(
 
-            title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            title: Text(godmorgenSoundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             leading: CircleAvatar(
-              backgroundImage: AssetImage(godmorgenSoundFiles[0].imagepath),
+              backgroundImage: AssetImage(godmorgenSoundFiles[1].imagepath),
 
             ),
-            subtitle: Text(godmorgenSoundFiles[0].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-            trailing: favList[index] ? new Image.asset('assets/icons/heartUnfilled.png') : new Image.asset('assets/icons/heartFilled.png'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          PlaySong(
-                              soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-                                  "Stående afspænding \n" + "11:27 min") ),
-                    )
-                );
-              },
+            subtitle: Text(godmorgenSoundFiles[1].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            trailing: new Image.asset('assets/icons/heartUnfilled.png'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PlaySong(
+                            soundFile: godmorgenSoundFiles[1]),
+                  )
+              );
+            },
             onLongPress: () {
               //TODO add the selected soundFile to the Fav page
-              favList[index] = !favList[index];
-              setState(() {});
+              setState(() {
+                if(!favFiles.contains(godmorgenSoundFiles[1])) {
+                  favFiles.add(godmorgenSoundFiles[1]);
+                }
+              });
 
             },
           ),
@@ -155,24 +203,32 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
 
 }
 
-
+List<SoundFile> favFiles = [];
 
 List<SoundFile> godmorgenSoundFiles = [
   SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
       "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/WalkingWhite.png",
+  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
       "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/CloudBubbleWhite.png",
+  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
       "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopWhite.png", "Stop op",
+  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
       "Liggende afspænding \n" + "12:11 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SleepingWhite.png", "Sov godt",
+      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
       "Liggende afspænding \n" + "12:16 min"),
 ];
 
-List<Widget> cardToFavourite = [];
+
