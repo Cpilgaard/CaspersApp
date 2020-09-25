@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testpust/FavoritPage.dart';
 import 'GodmorgenSoundPage.dart';
 import 'DitUdbytte.dart';
 
@@ -24,7 +25,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
-                      builder: (context) => GodmorgenSoundPage()
+                      builder: (context) => FavoritPage()
                   )
                   );
                 },

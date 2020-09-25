@@ -1,3 +1,4 @@
+
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -5,6 +6,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/Profil.dart';
+import 'FavoritPage.dart';
+import 'dart:async';
+import 'DatabaseHelper.dart';
 
 class PlaySong extends StatefulWidget {
   PlaySong({Key key, this.soundFile}) : super(key: key);
@@ -23,6 +27,8 @@ class _PlaySongState extends State<PlaySong> {
   Duration position;
   bool isPlaying = false;
   SharedPreferences prefs;
+  DatabaseHelper helper = DatabaseHelper();
+
 
   AudioCache audioCache;
 
@@ -124,7 +130,8 @@ class _PlaySongState extends State<PlaySong> {
                           height: 325,
                           width: 325,
                             child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                              new CircleAvatar(backgroundImage: AssetImage(soundFile.imagepath)),
+                              new CircleAvatar(backgroundImage: AssetImage(soundFile.imagepath),
+                              radius: 30,),
                               new Text(
                                 soundFile.title,
                                 style: new TextStyle(fontSize: 24.0, color: Color.fromRGBO(46, 91, 140, 1)),
@@ -164,7 +171,23 @@ class _PlaySongState extends State<PlaySong> {
 
     int _currentIndex = 0;
     return new Scaffold(
-        appBar: AppBar(title: Text(soundFile.title)),
+        appBar: AppBar(
+            title: Text(soundFile.title),
+            actions: <Widget>[
+              IconButton(
+                icon: new Image.asset("assets/icons/heartFilledAppBar.png"),
+                onPressed: () {
+                  pause();
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context) => FavoritPage()
+                  )
+                  );
+                },
+              )
+            ],
+            backgroundColor: Color.fromRGBO(48, 121, 169, 1.0)
+        ),
         body: new Container(child: _buildPlayer(),
         ),
         bottomNavigationBar: new Theme(
@@ -229,7 +252,49 @@ class _PlaySongState extends State<PlaySong> {
               ),
             ],
     ),
-        )
+        ),
+      // The following code lets the user add the playing song to favourits, if it already is not added.
+      floatingActionButton: Container(
+        padding: EdgeInsets.only(left: 270, bottom: 350),
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  {
+                    _saveSoundfile(this.soundFile, context);
+
+                  }
+                });
+              },
+            child: Image.asset("assets/icons/heartUnfilled.png"),
+            backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
+            elevation: 0,
+
+             // icon: new Image.asset("assets/icons/heartUnfilled.png"),
+              //label: Text("")
+          ),
+        ),
+      ),
     );
   }
+
+  void _saveSoundfile(soundfile, context) async {
+
+    var result = helper.soundFileTable;
+    if(!result.contains(soundfile)) {
+      await helper.insertSoundfile(this.soundFile);
+      showDialog(context: context,
+          builder: (context){
+            Future.delayed(Duration(milliseconds: 1200), () {
+              Navigator.of(context).pop(true);
+            });
+            return AlertDialog(
+                title: Text("Tilføjet til favoritter")
+            );
+          });
+    } // TODO tilføj tekst der siger, at den er tilføjet
+  }
+
+
 }

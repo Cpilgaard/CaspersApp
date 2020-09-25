@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/Profil.dart';
 import 'GodmorgenSoundPage.dart';
 
@@ -23,7 +24,7 @@ class DitUdbytteState extends State<DitUdbytte> {
             onPressed: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
+                  builder: (context) => FavoritPage()
               )
               );
             },

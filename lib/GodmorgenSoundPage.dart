@@ -128,7 +128,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: Slidable(
           actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+           actionExtentRatio: 0.25,
             child: new Container(
               child: ListTile(
                 title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -137,7 +137,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
                 ),
                 subtitle: Text(godmorgenSoundFiles[0].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-                trailing: new Image.asset('assets/icons/heartUnfilled.png'),
+                trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -178,7 +178,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
             ),
             subtitle: Text(godmorgenSoundFiles[1].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-            trailing: new Image.asset('assets/icons/heartUnfilled.png'),
+            trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
                   context,
@@ -189,15 +189,14 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   )
               );
             },
-            onLongPress: () {
-              //TODO add the selected soundFile to the Fav page
+            /*onLongPress: () {
               setState(() {
                 if(!favFiles.contains(godmorgenSoundFiles[1])) {
                   favFiles.add(godmorgenSoundFiles[1]);
                 }
               });
 
-            },
+            },*/
           ),
         )
     );
@@ -210,12 +209,14 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     } else {
       throw 'Could not launch $url';
     }
+
   }
 
 
 }
 
 List<SoundFile> favFiles = [];
+
 
 List<SoundFile> godmorgenSoundFiles = [
   SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
