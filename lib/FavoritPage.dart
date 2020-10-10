@@ -87,6 +87,9 @@ class _FavoritPageState extends State<FavoritPage>{
                                     )
                                 );
                               },
+                              onLongPress: () {
+                                _deleteSoundfileFromDB(index);
+                              },
                         )
                         );
                         },
@@ -167,6 +170,12 @@ class _FavoritPageState extends State<FavoritPage>{
         });
       });
     });
+  }
+
+  void _deleteSoundfileFromDB(int index) async {
+    await databaseHelper.deleteSoundfile(this.soundfileList[index].id);
+    updateListView();
+
   }
 
 

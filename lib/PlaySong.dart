@@ -263,7 +263,6 @@ class _PlaySongState extends State<PlaySong> {
                 setState(() {
                   {
                     _saveSoundfile(this.soundFile, context);
-
                   }
                 });
               },
@@ -281,8 +280,9 @@ class _PlaySongState extends State<PlaySong> {
 
   void _saveSoundfile(soundfile, context) async {
 
+    //TODO prøv at lave en hard reset (DELETE) af DB.
     var result = helper.soundFileTable;
-    if(!result.contains(soundfile)) {
+    //if(!result.contains(soundfile)) {
       await helper.insertSoundfile(this.soundFile);
       showDialog(context: context,
           builder: (context){
@@ -293,7 +293,7 @@ class _PlaySongState extends State<PlaySong> {
                 title: Text("Tilføjet til favoritter")
             );
           });
-    } // TODO tilføj tekst der siger, at den er tilføjet
+   // } // TODO tilføj tekst der siger, at den er tilføjet allerede
   }
 
 

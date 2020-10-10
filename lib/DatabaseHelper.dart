@@ -69,9 +69,9 @@ class DatabaseHelper{
     
   }*/
 
-  Future<int> deleteSoundfile(int id) async {
+  Future<int> deleteSoundfile(int index) async {
     var db = await this.database;
-    int result = await db.rawDelete('DELETE FROM $soundFileTable WHERE $colId = $id');
+    int result = await db.rawDelete('DELETE FROM $soundFileTable WHERE $colId = $index');
     return result;    
   }
   
