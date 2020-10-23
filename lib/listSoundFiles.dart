@@ -3,6 +3,7 @@ import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/GodmorgenSoundPage.dart';
 import 'package:testpust/Profil.dart';
 import 'package:testpust/FavoritPage.dart';
+import 'package:testpust/global_strings.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
@@ -55,7 +56,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
           title: Text('Afspændingssekvenser'),
             actions: <Widget>[
               IconButton(
-                icon: new Image.asset("assets/icons/heartFilledAppBar.png",),
+                icon: new Image.asset(heartFilledAppBarImage,),
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
@@ -70,7 +71,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
         body: new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-            image: AssetImage('assets/images/BaggrundNY.png'),
+            image: AssetImage(backgroundImage),
             fit: BoxFit.fill,
             )
           ) ,
@@ -110,11 +111,11 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             switch(index){
               case 0:
                 //Redirects to Facebook
-                launchURL('https://www.facebook.com/casper.pilgaard');
+                launchURL(facebookURL);
                 break;
               case 1:
                 //Redirects to Instagram
-                launchURL('https://www.instagram.com/marlene_biegel/');
+                launchURL(instagramURL);
                 break;
               case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -130,28 +131,28 @@ class ListSoundFilesState extends State<ListSoundFiles> {
           items: <BottomNavigationBarItem> [
             new BottomNavigationBarItem(
             //Icon for FB
-              icon: new Image.asset('assets/icons/Facebook.png',
+              icon: new Image.asset(facebookImage,
                 height: 40,
                 width: 60,),
               title: Text(''),
           ),
             new BottomNavigationBarItem(
             //Icon for Instagram
-              icon: new Image.asset('assets/icons/Instagram.png',
+              icon: new Image.asset(instagramImage,
                 height: 40,
                 width: 60,),
               title: new Text('')
           ),
             new BottomNavigationBarItem(
             //Icon for Formaal page
-            icon: new Image.asset('assets/icons/Formaal.png',
+            icon: new Image.asset(formaalImage,
               height: 40,
               width: 60,),
             title: new Text(''),
           ),
             new BottomNavigationBarItem(
             //Icon for Erfaringsgrundlag page
-              icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+              icon: new Image.asset(erfaringsgrundlagImage,
                 height: 40,
                 width: 60,),
               title: new Text(''),

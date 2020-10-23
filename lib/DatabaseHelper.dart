@@ -60,6 +60,7 @@ class DatabaseHelper{
 
   Future<int> insertSoundfile(SoundFile soundFile) async {
     Database db = await this.database;
+
     var result = await db.insert(soundFileTable, soundFile.toMap());
     return result;
   }

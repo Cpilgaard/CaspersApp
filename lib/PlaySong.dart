@@ -1,4 +1,6 @@
 
+
+import 'package:sqflite/sqflite.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -9,6 +11,7 @@ import 'package:testpust/Profil.dart';
 import 'FavoritPage.dart';
 import 'dart:async';
 import 'DatabaseHelper.dart';
+import 'global_strings.dart';
 
 class PlaySong extends StatefulWidget {
   PlaySong({Key key, this.soundFile}) : super(key: key);
@@ -28,6 +31,8 @@ class _PlaySongState extends State<PlaySong> {
   bool isPlaying = false;
   SharedPreferences prefs;
   DatabaseHelper helper = DatabaseHelper();
+
+
 
 
   AudioCache audioCache;
@@ -112,7 +117,7 @@ class _PlaySongState extends State<PlaySong> {
         new Container(
             decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/BaggrundNY.png'),
+              image: AssetImage(backgroundImage),
               fit: BoxFit.fill,
             )
         ),
@@ -175,7 +180,7 @@ class _PlaySongState extends State<PlaySong> {
             title: Text(soundFile.title),
             actions: <Widget>[
               IconButton(
-                icon: new Image.asset("assets/icons/heartFilledAppBar.png"),
+                icon: new Image.asset(heartFilledAppBarImage),
                 onPressed: () {
                   pause();
                   Navigator.push(
@@ -224,28 +229,28 @@ class _PlaySongState extends State<PlaySong> {
             items: <BottomNavigationBarItem> [
               new BottomNavigationBarItem(
                 //Icon for FB
-                icon: new Image.asset('assets/icons/Facebook.png',
+                icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
                 title: Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
-                  icon: new Image.asset('assets/icons/Instagram.png',
+                  icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
                   title: new Text('')
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
-                icon: new Image.asset('assets/icons/Formaal.png',
+                icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
-                icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+                icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
@@ -265,13 +270,12 @@ class _PlaySongState extends State<PlaySong> {
                     _saveSoundfile(this.soundFile, context);
                   }
                 });
+                //Scaffold.of(context)
+                  //  .showSnackBar(SnackBar(content: Text(addedToFav)));
               },
-            child: Image.asset("assets/icons/heartUnfilled.png"),
+            child: Image.asset(heartUnFilled),
             backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
             elevation: 0,
-
-             // icon: new Image.asset("assets/icons/heartUnfilled.png"),
-              //label: Text("")
           ),
         ),
       ),
@@ -279,22 +283,12 @@ class _PlaySongState extends State<PlaySong> {
   }
 
   void _saveSoundfile(soundfile, context) async {
+    await helper.insertSoundfile(this.soundFile);
 
-    //TODO prøv at lave en hard reset (DELETE) af DB.
-    var result = helper.soundFileTable;
-    //if(!result.contains(soundfile)) {
-      await helper.insertSoundfile(this.soundFile);
-      showDialog(context: context,
-          builder: (context){
-            Future.delayed(Duration(milliseconds: 1200), () {
-              Navigator.of(context).pop(true);
-            });
-            return AlertDialog(
-                title: Text("Tilføjet til favoritter")
-            );
-          });
-   // } // TODO tilføj tekst der siger, at den er tilføjet allerede
+    //TODO Tilføj snackbar
+
+    // TODO Tilføj logic der tjekker om lydfilen allerede er tilføjet
+
   }
-
 
 }

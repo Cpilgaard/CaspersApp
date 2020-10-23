@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/Profil.dart';
+import 'package:testpust/global_strings.dart';
 import 'GodmorgenSoundPage.dart';
 
 class DitUdbytte extends StatefulWidget {
@@ -20,11 +21,11 @@ class DitUdbytteState extends State<DitUdbytte> {
         title: Text("Formål"),
         actions: <Widget>[
           IconButton(
-          icon: new Image.asset("assets/icons/heartFilledAppBar.png"),
+          icon: new Image.asset(heartFilledAppBarImage),
             onPressed: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => FavoritPage()
+                   builder: (context) => FavoritPage()
               )
               );
             },
@@ -35,7 +36,7 @@ class DitUdbytteState extends State<DitUdbytte> {
       body: new Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/Baggrundtest.png'),
+            image: AssetImage(backgroundImage),
             fit: BoxFit.fill,
           )
       ),
@@ -52,23 +53,14 @@ class DitUdbytteState extends State<DitUdbytte> {
                     children: <Widget>[
                       //SizedBox(height: 55),
                       Container(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(15),
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: RichText(
                           text: TextSpan(
                             // Gør overskriften til blå og større size end resten af teksten
                             text: "Dit Pusterum" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
                             children: <TextSpan>[
-                              TextSpan(text: "\nApp'en henvender sig til alle voksne mennesker, som har lyst til at give sig selv og sin krop en pause fra hverdagens gøremål. Formålet er at have mulighed for at gå ”offline” og dermed lukke af for hverdagens larm, uanset hvor du befinder dig.\n\n" +
-                                  "App'en indeholder nogle lydfiler som har til hensigt at afspænde krop og sind. Størstedelen af afspændingssekvenserne er tiltænkt til bestemte tidspunkter på dagen, morgen, middag og aften, mens andre er mere velegnet til vilkårlige tidspunkter.\n\n" +
-                                  "Under en afspændingsøvelse er hippocampus, som er en del af hjernen og kroppens forsvar, med til at regulere og sænke niveauet af stresshormoner. Derved beroliges hjernen, så kroppen kan slappe af og give efter. I denne tilstand afbalanceres åndedrættet og immunforsvaret styrkes. Ved dagligt brug af øvelserne opnås den bedste effekt. Tænk på det som en mental fitness, der øger din mentale sundhed, ligesom regelmæssig fysisk træning opbygger og forbedrer din fysiske form.\n\n" +
-                                  "Nyeste anerkendte amerikanske studier viser at eksempelvis åndedrætsøvelser kan mindske stress, øge din opmærksomhed og sænke tankespind. Når du jævnligt udfører øvelserne kan du opleve at blive bedre til at være fokuseret og opmærksom, hvilket kan være med til at styrke din håndtering af en stresset og krævende arbejdsdag.  Ligeledes kan du opleve at der skal mere til at distrahere dig, da øvelserne træner din opmærksomhed og skærper dit nærvær i nuet.\n" +
-                                  "Afhængig af hvilken afspænding du vælger, så gør det så komfortabelt som muligt f.eks. ved brug af et tæppe, gode sko eller en blød stol.\n\n" +
-                                  "God fornøjelse!\n\n" +
-                                  "Kilder:\n" +
-                                  "Daniel Jay Goleman, videnskabsjournalist, psykolog & forfatter\n" +
-                                  "Richard Davidson, professer i psykologi og psykiatri ved University of Wisconsin-Madison\n" +
-                                  "Videnskab.dk \n", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14))
+                              TextSpan(text: ditUdbytteText, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14))
                           ]
                         ),
                       ),
@@ -112,28 +104,28 @@ class DitUdbytteState extends State<DitUdbytte> {
         items: <BottomNavigationBarItem> [
           new BottomNavigationBarItem(
             //Icon for FB
-            icon: new Image.asset('assets/icons/Facebook.png',
+            icon: new Image.asset(facebookImage,
               height: 40,
               width: 60,),
             title: Text(''),
           ),
           new BottomNavigationBarItem(
             //Icon for Instagram
-              icon: new Image.asset('assets/icons/Instagram.png',
+              icon: new Image.asset(instagramImage,
                 height: 40,
                 width: 60,),
               title: new Text('')
           ),
           new BottomNavigationBarItem(
             //Icon for Formaal page
-            icon: new Image.asset('assets/icons/Formaal.png',
+            icon: new Image.asset(formaalImage,
               height: 40,
               width: 60,),
             title: new Text(''),
           ),
           new BottomNavigationBarItem(
             //Icon for Erfaringsgrundlag page
-            icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+            icon: new Image.asset(erfaringsgrundlagImage,
               height: 40,
               width: 60,),
             title: new Text(''),

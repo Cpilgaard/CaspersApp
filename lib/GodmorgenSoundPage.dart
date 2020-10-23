@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testpust/global_strings.dart';
 import 'soundfile.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
@@ -27,13 +28,25 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     return Scaffold(
         appBar: AppBar(
             title: Text('Godmorgen'),
+            actions: <Widget>[
+              IconButton(
+                icon: new Image.asset(heartFilledAppBarImage),
+                  onPressed: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(
+                        builder: (context) => FavoritPage()
+                    )
+                    );
+                  },
+              )
+            ],
             //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/BaggrundNY.png'),
+                  image: AssetImage(backgroundImage),
                   fit: BoxFit.fill,
                 )
             ) ,
@@ -71,11 +84,11 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
               switch(index){
                 case 0:
                 //Redirects to Facebook
-                  launchURL('https://www.facebook.com/casper.pilgaard');
+                  launchURL(facebookURL);
                   break;
                 case 1:
                 //Redirects to Instagram
-                  launchURL('https://www.instagram.com/marlene_biegel/');
+                  launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -91,28 +104,28 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
             items: <BottomNavigationBarItem> [
               new BottomNavigationBarItem(
                 //Icon for FB
-                icon: new Image.asset('assets/icons/Facebook.png',
+                icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
                 title: Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
-                  icon: new Image.asset('assets/icons/Instagram.png',
+                  icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
                   title: new Text('')
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
-                icon: new Image.asset('assets/icons/Formaal.png',
+                icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
-                icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+                icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
@@ -151,7 +164,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
           ),
         ),
           actions: <Widget>[
-            IconSlideAction(
+            new IconSlideAction(
               caption: "Tilføj til Favorit",
               color: Color.fromRGBO(241, 242, 245, 0.8),
                 icon: Icons.ac_unit,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
+import 'package:testpust/global_strings.dart';
 import 'GodmorgenSoundPage.dart';
 import 'DitUdbytte.dart';
 
@@ -15,13 +16,15 @@ class Erfaringsgrundlag extends StatefulWidget {
 class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
   @override
   int _currentIndex = 0;
+  var x = -1.0;
+  var y = -1.0;
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             title: Text("Erfaringsgrundlag"),
             actions: <Widget>[
               IconButton(
-                icon: new Image.asset("assets/icons/heartFilledAppBar.png"),
+                icon: new Image.asset(heartFilledAppBarImage),
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
@@ -36,7 +39,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
         body: new Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/Baggrundtest.png'),
+                image: AssetImage(backgroundImage),
                 fit: BoxFit.fill,
               )
           ),
@@ -52,24 +55,21 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                      padding: EdgeInsets.all(5),
-                      color: Color.fromRGBO(241, 242, 245, 0.6),
-                        child: new Image.asset('assets/images/MarleneNy.png', height: 300, width: 350,),
+                        padding: EdgeInsets.all(20),
+                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        child: new Image.asset(marleneImage, height: 250, width: 300, alignment: Alignment(x,y))
                       ),
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(20),
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: RichText(
                           text: TextSpan(
-                            // Gør overskriften til blå og større size end resten af teksten
                               text: "Beskrivelse" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
                               children: <TextSpan>[
-                                TextSpan(text: "\nDenne app tager udgangspunkt i min uddannelse som professions bachelor i afspændingspædagogik og psykomotorik. Afspændingssekvenserne er udarbejdet og inspireret ud fra min erfaring med undervisning inden for afspændingspædagogikken igennem de sidste 11 år.\n" +
-                                    "I disse år har jeg erhvervet mig en solid portion erfaring og viden omkring, hvad det vil sige at arbejde med mennesker, at opbygge relationer og samtidig være motiverende i den enkeltes udviklingsproces. " +
-                                    "Mine kerneydelser er individuelle samtaler med fokus på trivsel, udvikling og egne ressourcer. Samt teoretisk og praktisk gruppeundervisning i kropsbevidstheds-\n" + "træning, afspænding for krop og sind, meditation og stressforebyggelse.\n",
+                                TextSpan(text: profileText,
                                     style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14)),
                                 TextSpan(text: "\nKontaktoplysninger: \n" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),),
-                                TextSpan(text: "Marlene Biegel \n" + "Mail: biegel@mail.dk \n" + "Tlf. nr: 22226127",
+                                TextSpan(text: contactInfo,
                                     style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14))
                               ]
                           ),
@@ -114,28 +114,28 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             items: <BottomNavigationBarItem> [
               new BottomNavigationBarItem(
                 //Icon for FB
-                icon: new Image.asset('assets/icons/Facebook.png',
+                icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
                 title: Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
-                  icon: new Image.asset('assets/icons/Instagram.png',
+                  icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
                   title: new Text('')
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
-                icon: new Image.asset('assets/icons/Formaal.png',
+                icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
-                icon: new Image.asset('assets/icons/Erfaringsgrundlag.png',
+                icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),
