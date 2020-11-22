@@ -7,6 +7,7 @@ import 'PlaySong.dart';
 import 'FavoritPage.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'ListSoundFiles.dart';
 
 
 class GodmorgenSoundPage extends StatefulWidget {
@@ -38,6 +39,18 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                     )
                     );
                   },
+              ),
+              IconButton(
+                //TODO Indsæt hus
+                icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
+                //icon: new Image.asset(heartFilledAppBarImage,),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context) => ListSoundFiles()
+                  )
+                  );
+                },
               )
             ],
             //TODO add backgroundColor and opacity. What colour should the text be?

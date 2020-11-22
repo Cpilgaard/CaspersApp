@@ -9,12 +9,15 @@ import 'PlaySong.dart';
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'DatabaseHelper.dart';
+import 'package:testpust/ListSoundFiles.dart';
 
 
 class FavoritPage extends StatefulWidget {
   FavoritPage({Key key, this.soundFile}) : super(key: key);
 
   final SoundFile soundFile;
+
+
 
   static String tag = 'FavoritPage';
   @override
@@ -41,6 +44,20 @@ class _FavoritPageState extends State<FavoritPage>{
       return Scaffold(
           appBar: AppBar(
               title: Text('Favoritter'),
+              actions: <Widget>[
+                IconButton(
+                  //TODO Indsæt hus
+                  icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
+                  //icon: new Image.asset(heartFilledAppBarImage,),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(
+                        builder: (context) => ListSoundFiles()
+                    )
+                    );
+                  },
+                )
+              ],
               //TODO add backgroundColor and opacity. What colour should the text be?
               backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
           ),

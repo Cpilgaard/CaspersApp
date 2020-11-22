@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 
 //Images and Icons
 String backgroundImage = 'assets/images/BaggrundUdenFuglUdenSpace.png';
 String heartFilledAppBarImage = 'assets/icons/heartFilledAppBar.png';
+String heartFilled = 'assets/icons/heartFilled.png';
 String heartUnFilled = 'assets/icons/heartUnfilled.png';
 String erfaringsgrundlagImage = 'assets/icons/Erfaringsgrundlag.png';
 String formaalImage = 'assets/icons/Formaal.png';
@@ -12,6 +12,7 @@ String facebookImage = 'assets/icons/Facebook.png';
 
 //Text / strings
 String addedToFav = "Tilføjet til favoritter";
+String alreadyAddedToFav = "Denne afspænding er allerede tilføjet som favorit";
 String ditUdbytteText = "\nApp'en henvender sig til alle voksne mennesker, som har lyst til at give sig selv og sin krop en pause fra hverdagens gøremål. Formålet er at have mulighed for at gå ”offline” og dermed lukke af for hverdagens larm, uanset hvor du befinder dig.\n\n" +
     "App'en indeholder nogle lydfiler som har til hensigt at afspænde krop og sind. Størstedelen af afspændingssekvenserne er tiltænkt til bestemte tidspunkter på dagen, morgen, middag og aften, mens andre er mere velegnet til vilkårlige tidspunkter.\n\n" +
     "Under en afspændingsøvelse er hippocampus, som er en del af hjernen og kroppens forsvar, med til at regulere og sænke niveauet af stresshormoner. Derved beroliges hjernen, så kroppen kan slappe af og give efter. I denne tilstand afbalanceres åndedrættet og immunforsvaret styrkes. Ved dagligt brug af øvelserne opnås den bedste effekt. Tænk på det som en mental fitness, der øger din mentale sundhed, ligesom regelmæssig fysisk træning opbygger og forbedrer din fysiske form.\n\n" +

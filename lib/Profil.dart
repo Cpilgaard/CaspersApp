@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/global_strings.dart';
-import 'GodmorgenSoundPage.dart';
 import 'DitUdbytte.dart';
+import 'ListSoundFiles.dart';
+
 
 class Erfaringsgrundlag extends StatefulWidget {
   static String tag = 'Erfaringsgrundlag';
@@ -29,6 +30,19 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                   Navigator.push(
                       context, MaterialPageRoute(
                       builder: (context) => FavoritPage()
+                  ),
+                  );
+                },
+                tooltip: "Test",
+              ),
+              IconButton(
+                //TODO Indsæt hus
+                icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
+                //icon: new Image.asset(heartFilledAppBarImage,),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context) => ListSoundFiles()
                   )
                   );
                 },

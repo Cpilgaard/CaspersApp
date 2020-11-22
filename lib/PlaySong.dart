@@ -1,6 +1,3 @@
-
-
-import 'package:sqflite/sqflite.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -8,7 +5,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/Profil.dart';
-import 'FavoritPage.dart';
+import 'package:testpust/FavoritPage.dart';
+import 'ListSoundFiles.dart';
 import 'dart:async';
 import 'DatabaseHelper.dart';
 import 'global_strings.dart';
@@ -29,9 +27,9 @@ class _PlaySongState extends State<PlaySong> {
   Duration duration;
   Duration position;
   bool isPlaying = false;
+  bool isAdded = false;
   SharedPreferences prefs;
   DatabaseHelper helper = DatabaseHelper();
-
 
 
 
@@ -50,6 +48,7 @@ class _PlaySongState extends State<PlaySong> {
     audioCache = new AudioCache(fixedPlayer: audioPlayer);
     setupPref();
     play();
+
 
     audioPlayer.durationHandler = (d) => setState(() {
           duration = d;
@@ -189,6 +188,17 @@ class _PlaySongState extends State<PlaySong> {
                   )
                   );
                 },
+              ),
+              IconButton(
+                icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
+                //icon: new Image.asset(heartFilledAppBarImage,),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context) => ListSoundFiles()
+                  )
+                  );
+                },
               )
             ],
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0)
@@ -264,16 +274,8 @@ class _PlaySongState extends State<PlaySong> {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
-              onPressed: () {
-                setState(() {
-                  {
-                    _saveSoundfile(this.soundFile, context);
-                  }
-                });
-                //Scaffold.of(context)
-                  //  .showSnackBar(SnackBar(content: Text(addedToFav)));
-              },
-            child: Image.asset(heartUnFilled),
+            onPressed: () { _saveSoundfile(this.soundFile, context);},
+            child: new Image.asset(isAdded ? heartFilled : heartUnFilled),
             backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
             elevation: 0,
           ),
@@ -282,13 +284,19 @@ class _PlaySongState extends State<PlaySong> {
     );
   }
 
+
   void _saveSoundfile(soundfile, context) async {
     await helper.insertSoundfile(this.soundFile);
-
-    //TODO Tilføj snackbar
-
-    // TODO Tilføj logic der tjekker om lydfilen allerede er tilføjet
-
+    _showAlertDialog(addedToFav);
   }
 
+  void _showAlertDialog(String message) {
+    AlertDialog alertDialog = AlertDialog(
+      content: Text(message),
+    );
+    showDialog(
+        context: context,
+        builder: (_) => alertDialog
+    );
+  }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/Profil.dart';
 import 'package:testpust/global_strings.dart';
-import 'GodmorgenSoundPage.dart';
+import 'ListSoundFiles.dart';
 
 class DitUdbytte extends StatefulWidget {
   static String tag = 'Formål';
@@ -26,6 +26,18 @@ class DitUdbytteState extends State<DitUdbytte> {
               Navigator.push(
                   context, MaterialPageRoute(
                    builder: (context) => FavoritPage()
+              )
+              );
+            },
+          ),
+          IconButton(
+            //TODO Indsæt hus
+            icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
+            //icon: new Image.asset(heartFilledAppBarImage,),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(
+                  builder: (context) => ListSoundFiles()
               )
               );
             },
