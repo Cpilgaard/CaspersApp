@@ -30,7 +30,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
   int _currentIndex = 0;
   void initState() {
     _rateMyApp.init().then((_) {
-      //To test the implementation of the showRateDialog, uncomment this if statement
+      //To android_splash the implementation of the showRateDialog, uncomment this if statement
       if (_rateMyApp.shouldOpenDialog) {
         _rateMyApp.showRateDialog(
           context,
