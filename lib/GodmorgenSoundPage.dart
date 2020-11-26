@@ -41,9 +41,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   },
               ),
               IconButton(
-                //TODO Indsæt hus
                 icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
-                //icon: new Image.asset(heartFilledAppBarImage,),
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
@@ -75,12 +73,13 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       cardGodmorgenSoundFile0(index),
-                      cardGodmorgenSoundFile1(index)
-                  ],
+                      cardGodmorgenSoundFile1(index),
+                      cardGodmorgenSoundFile2(index),
+                      cardGodmorgenSoundFile3(index),
+                      cardGodmorgenSoundFile4(index),
+                    ],
                 ),
                 ),
-
-
               ),
 
             )
@@ -186,7 +185,6 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                 });
                 }
             ),
-
           ],
         ),
     );
@@ -215,14 +213,90 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   )
               );
             },
-            /*onLongPress: () {
-              setState(() {
-                if(!favFiles.contains(godmorgenSoundFiles[1])) {
-                  favFiles.add(godmorgenSoundFiles[1]);
-                }
-              });
+          ),
+        )
+    );
+  }
 
-            },*/
+  Widget cardGodmorgenSoundFile2(int index) {
+    return new Card(
+        color: Color.fromRGBO(241, 242, 245, 0.8),
+        child: new Container(
+          child: ListTile(
+
+            title: Text(godmorgenSoundFiles[2].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(godmorgenSoundFiles[2].imagepath),
+
+            ),
+            subtitle: Text(godmorgenSoundFiles[2].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PlaySong(
+                            soundFile: godmorgenSoundFiles[2]),
+                  )
+              );
+            },
+          ),
+        )
+    );
+  }
+
+  Widget cardGodmorgenSoundFile3(int index) {
+    return new Card(
+        color: Color.fromRGBO(241, 242, 245, 0.8),
+        child: new Container(
+          child: ListTile(
+
+            title: Text(godmorgenSoundFiles[3].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(godmorgenSoundFiles[3].imagepath),
+
+            ),
+            subtitle: Text(godmorgenSoundFiles[3].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PlaySong(
+                            soundFile: godmorgenSoundFiles[3]),
+                  )
+              );
+            },
+          ),
+        )
+    );
+  }
+
+  Widget cardGodmorgenSoundFile4(int index) {
+    return new Card(
+        color: Color.fromRGBO(241, 242, 245, 0.8),
+        child: new Container(
+          child: ListTile(
+
+            title: Text(godmorgenSoundFiles[4].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(godmorgenSoundFiles[4].imagepath),
+
+            ),
+            subtitle: Text(godmorgenSoundFiles[4].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PlaySong(
+                            soundFile: godmorgenSoundFiles[4]),
+                  )
+              );
+            },
           ),
         )
     );
@@ -235,14 +309,8 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     } else {
       throw 'Could not launch $url';
     }
-
   }
-
-
 }
-
-List<SoundFile> favFiles = [];
-
 
 List<SoundFile> godmorgenSoundFiles = [
   SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",

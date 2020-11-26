@@ -203,7 +203,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
+                  builder: (context) => GodmorgenSoundPage() //TODO change to FrokostSoundPage
               )
               );
             },
@@ -227,7 +227,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
+                  builder: (context) => GodmorgenSoundPage() //TODO change to DagensPusterumSoundPage
               )
               );
             },
@@ -251,7 +251,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
+                  builder: (context) => GodmorgenSoundPage() //TODO change to StopOpPage
               )
               );
             },
@@ -275,7 +275,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
+                  builder: (context) => GodmorgenSoundPage() //TODO change to SovGodtPage
               )
               );
             },

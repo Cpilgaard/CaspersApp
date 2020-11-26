@@ -26,5 +26,5 @@ String profileText = "\nDenne app tager udgangspunkt i min uddannelse som profes
 String contactInfo = "Marlene Biegel \n" + "Mail: biegel@mail.dk \n" + "Tlf. nr: 22226127";
 String marleneImage = 'assets/images/MarleneNy.png';
 String instagramURL = 'https://www.instagram.com/marlene_biegel/';
-String facebookURL = 'https://www.facebook.com/casper.pilgaard';
+String facebookURL = 'https://www.facebook.com/casper.pilgaard'; //TODO ændr til Marlenes side.
 
