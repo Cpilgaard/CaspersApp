@@ -191,7 +191,6 @@ class _PlaySongState extends State<PlaySong> {
               ),
               IconButton(
                 icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
-                //icon: new Image.asset(heartFilledAppBarImage,),
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
@@ -268,7 +267,6 @@ class _PlaySongState extends State<PlaySong> {
             ],
     ),
         ),
-      // The following code lets the user add the playing song to favourits, if it already is not added.
       floatingActionButton: Container(
         padding: EdgeInsets.only(left: 270, bottom: 350),
         child: Align(
@@ -297,6 +295,7 @@ class _PlaySongState extends State<PlaySong> {
     showDialog(
         context: context,
         builder: (_) => alertDialog
+        //TODO timer ??
     );
   }
 }

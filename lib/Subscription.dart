@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/global_strings.dart';
 import 'DitUdbytte.dart';
+import 'Profil.dart';
+import 'FavoritPage.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'ListSoundFiles.dart';
 
 
-class Erfaringsgrundlag extends StatefulWidget {
-  static String tag = 'Erfaringsgrundlag';
+class Subscription extends StatefulWidget {
+  static String tag = 'Subscription';
   @override
   State<StatefulWidget> createState() {
-    return ErfaringsgrundlagState();
+    return SubscriptionState();
   }
+
+
+
 }
 
-// SingleTickerProviderStateMixin is used for animation
-class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
+class SubscriptionState extends State<Subscription>{
   @override
-  int _currentIndex = 0;
-  var x = -1.0;
-  var y = -1.0;
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("Erfaringsgrundlag"),
+            title: Text('Abonnement'),
             actions: <Widget>[
               IconButton(
                 icon: new Image.asset(heartFilledAppBarImage),
@@ -30,14 +31,12 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                   Navigator.push(
                       context, MaterialPageRoute(
                       builder: (context) => FavoritPage()
-                  ),
+                  )
                   );
                 },
-                tooltip: "Test",
               ),
               IconButton(
                 icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
-                //icon: new Image.asset(heartFilledAppBarImage,),
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(
@@ -47,56 +46,34 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                 },
               )
             ],
+            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(backgroundImage),
-                fit: BoxFit.fill,
-              )
-          ),
-          child: new Center(
-            child: new Container(
-              padding: EdgeInsets.all(20.0),
-              color: Color.fromRGBO(241, 242, 245, 0.4),
-              height: 425,
-              width: 350,
-              child: new Center(
-                child: SingleChildScrollView(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(backgroundImage),
+                  fit: BoxFit.fill,
+                )
+            ) ,
+
+            child: new Center(
+              child: new Container(
+                padding: EdgeInsets.all(5.0),
+                color: Color.fromRGBO(241, 242, 245, 0.4),
+                height: 400,
+                width: 350,
+/*                child: new Center(
                   child: new Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
-                        child: new Image.asset(marleneImage, height: 250, width: 300, alignment: Alignment(x,y))
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
-                        child: RichText(
-                          text: TextSpan(
-                              text: "Beskrivelse" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
-                              children: <TextSpan>[
-                                TextSpan(text: profileText,
-                                    style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14)),
-                                TextSpan(text: "\nKontaktoplysninger: \n" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),),
-                                TextSpan(text: contactInfo,
-                                    style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14))
-                              ]
-                          ),
-                        ),
-                      ),
                     ],
                   ),
-                ),
+                ),*/
               ),
-            ),
-          ),
+
+            )
         ),
-
-
         bottomNavigationBar: new Theme(
           data: Theme.of(context).copyWith(
               canvasColor: Color.fromRGBO(48, 121, 169, 1.0)
@@ -104,22 +81,24 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           child: new BottomNavigationBar(
             // Gets the index of the pressed item. Switch case is used for redirecting to
             // the different pages
-            currentIndex: _currentIndex,
+            //currentIndex: _currentIndex,
             onTap: (int index) {
               switch(index){
                 case 0:
-                //TODO Redirect to Facebook
+                //Redirects to Facebook
+                  launchURL(facebookURL);
                   break;
                 case 1:
-                //TODO Redirect to Instagram
+                //Redirects to Instagram
+                  launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
                 case 3:
                 // Redirects to Erfaringsgrundlag
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                   break;
               }
             },
@@ -157,6 +136,16 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           ),
         )
     );
+  }
+
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 

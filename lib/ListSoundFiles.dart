@@ -1,7 +1,12 @@
+import 'package:testpust/DagensPusterumSoundPage.dart';
 import 'package:testpust/DitUdbytte.dart';
+import 'package:testpust/FrokostSoundPage.dart';
 import 'package:testpust/GodmorgenSoundPage.dart';
 import 'package:testpust/Profil.dart';
 import 'package:testpust/FavoritPage.dart';
+import 'package:testpust/SovGodtSoundPage.dart';
+import 'package:testpust/StopOpSoundPage.dart';
+import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
@@ -121,6 +126,10 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
               case 3:
+              // Redirects to Subscription
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                break;
+              case 4:
               // Redirects to Erfaringsgrundlag
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                 break;
@@ -134,29 +143,34 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 height: 40,
                 width: 60,),
               title: Text(''),
-          ),
+            ),
             new BottomNavigationBarItem(
             //Icon for Instagram
               icon: new Image.asset(instagramImage,
                 height: 40,
                 width: 60,),
               title: new Text('')
-          ),
+            ),
             new BottomNavigationBarItem(
             //Icon for Formaal page
             icon: new Image.asset(formaalImage,
               height: 40,
               width: 60,),
             title: new Text(''),
-          ),
+            ),
+            new BottomNavigationBarItem(
+              //Icon for Subscription page
+              icon: Icon(Icons.attach_money),
+              title: new Text(''),
+            ),
             new BottomNavigationBarItem(
             //Icon for Erfaringsgrundlag page
               icon: new Image.asset(erfaringsgrundlagImage,
                 height: 40,
                 width: 60,),
               title: new Text(''),
-          ),
-        ],
+            ),
+          ],
         ),
       )
     );
@@ -174,7 +188,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 backgroundImage: AssetImage(soundFiles[0].imagepath),
 
               ),
-              subtitle: Text("Guidede afspændingsøvelser til den gode start på din dag", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+              subtitle: Text("Guidede afspændingsøvelser til den gode start på dagen", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
               trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
                 Navigator.push(
@@ -198,12 +212,12 @@ class ListSoundFilesState extends State<ListSoundFiles> {
               backgroundImage: AssetImage('assets/images/FrokostPausen.png'),
 
             ),
-            subtitle: Text("Guidede afspændingsøvelser, under åben himmel", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            subtitle: Text("Guidede afspændingsøvelser under åben himmel", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage() //TODO change to FrokostSoundPage
+                  builder: (context) => FrokostSoundPage()
               )
               );
             },
@@ -222,12 +236,12 @@ class ListSoundFilesState extends State<ListSoundFiles> {
               backgroundImage: AssetImage('assets/images/DagensPusterum.png'),
 
             ),
-            subtitle: Text("Guidede afspændings-øvelser til alle tidspunkter på din dag", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            subtitle: Text("Guidede afspændingsøvelser til alle tidspunkter på din dag", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage() //TODO change to DagensPusterumSoundPage
+                  builder: (context) => DagensPusterumSoundPage()
               )
               );
             },
@@ -246,12 +260,12 @@ class ListSoundFilesState extends State<ListSoundFiles> {
               backgroundImage: AssetImage('assets/images/StopOp.png'),
 
             ),
-            subtitle: Text("Guidede afspændings-øvelser til når din krop er stresset", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            subtitle: Text("Guidede afspændingsøvelser til når din krop er stresset", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage() //TODO change to StopOpPage
+                  builder: (context) => StopOpSoundPage()
               )
               );
             },
@@ -270,12 +284,12 @@ class ListSoundFilesState extends State<ListSoundFiles> {
               backgroundImage: AssetImage('assets/images/SovGodt.png'),
 
             ),
-            subtitle: Text("Guidede afspændings-øvelser til din gode søvn", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
+            subtitle: Text("Guidede afspændingsøvelser til en god og naturlig søvn", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage() //TODO change to SovGodtPage
+                  builder: (context) => SovGodtSoundPage()
               )
               );
             },
@@ -283,7 +297,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
         )
     );
   }
-
 
   launchURL(String string) async {
     String url = string;
@@ -293,7 +306,6 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       throw 'Could not launch $url';
     }
   }
-
 }
 
   List<SoundFile> soundFiles = [

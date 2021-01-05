@@ -46,7 +46,6 @@ class _FavoritPageState extends State<FavoritPage>{
               title: Text('Favoritter'),
               actions: <Widget>[
                 IconButton(
-                  //TODO Indsæt hus
                   icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
                   //icon: new Image.asset(heartFilledAppBarImage,),
                   onPressed: () {

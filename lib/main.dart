@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:testpust/Subscription.dart';
 //import 'package:testpust/ListSoundFiles.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
@@ -18,6 +19,7 @@ void main() async {
       DitUdbytte.tag: (BuildContext context) => new DitUdbytte(),
       ListSoundFiles.tag: (BuildContext context) => new ListSoundFiles(),
       Erfaringsgrundlag.tag: (BuildContext context) => new Erfaringsgrundlag(),
+      Subscription.tag: (BuildContext context) => new Subscription(),
       Forside.tag: (BuildContext context) => new Forside()
     },
   ));
