@@ -13,15 +13,13 @@ class Subscription extends StatefulWidget {
   State<StatefulWidget> createState() {
     return SubscriptionState();
   }
-
-
-
 }
 
 class SubscriptionState extends State<Subscription>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         appBar: AppBar(
             title: Text('Abonnement'),
             actions: <Widget>[
@@ -59,17 +57,63 @@ class SubscriptionState extends State<Subscription>{
 
             child: new Center(
               child: new Container(
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(20.0),
                 color: Color.fromRGBO(241, 242, 245, 0.4),
-                height: 400,
+                height: 425,
                 width: 350,
-/*                child: new Center(
-                  child: new Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                    ],
+                  child: new Container(
+                    child: new SingleChildScrollView(
+                      child: new Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                      Container(
+                        width: 350,
+                        padding: EdgeInsets.all(20.0),
+                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        child: Text("Betaling" ,
+                            style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1),
+                                fontSize: 20),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Container(
+                        width: 350,
+                        padding: EdgeInsets.all(20.0),
+                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        child: Text("Pris 23,00 kr/md" ,
+                            style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1),
+                              fontSize: 20),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        width: 350,
+                        padding: EdgeInsets.all(20.0),
+                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        child: RaisedButton(
+                          disabledColor: Color.fromRGBO(46, 91, 140, 1),
+                          color: Color.fromRGBO(46, 91, 140, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(45.0),
+                          ),
+                          elevation: 10,
+                          onPressed: () => print("TEST"),
+                          child: new Text("KØB", style: TextStyle(color: Colors.white),),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(20.0),
+                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        child: Text(subscriptionText,
+                          style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1),
+                              fontSize: 14),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ]
                   ),
-                ),*/
+                    ),
+                ),
               ),
 
             )

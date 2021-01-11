@@ -69,19 +69,18 @@ class DitUdbytteState extends State<DitUdbytte> {
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: RichText(
                           text: TextSpan(
-                            // Gør overskriften til blå og større size end resten af teksten
                             text: "Dit Pusterum" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
                             children: <TextSpan>[
                               TextSpan(text: ditUdbytteText, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 14))
                           ]
                         ),
+                        ),
                       ),
+                    ],
+                    ),
+                  ),
+              ),
             ),
-           ],
-        ),
-      ),
-    ),
-      ),
           ),
       ),
 
