@@ -78,7 +78,7 @@ class SubscriptionState extends State<Subscription>{
                       ),
                       Container(
                         width: 350,
-                        padding: EdgeInsets.all(20.0),
+                        padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: Text("Pris 23,00 kr/md" ,
                             style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1),
@@ -88,7 +88,7 @@ class SubscriptionState extends State<Subscription>{
                       ),
                       Container(
                         width: 350,
-                        padding: EdgeInsets.all(20.0),
+                        padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: RaisedButton(
                           disabledColor: Color.fromRGBO(46, 91, 140, 1),
@@ -102,7 +102,7 @@ class SubscriptionState extends State<Subscription>{
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(20.0),
+                        padding: EdgeInsets.fromLTRB(20, 2, 20, 20),
                         color: Color.fromRGBO(241, 242, 245, 0.6),
                         child: Text(subscriptionText,
                           style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1),
