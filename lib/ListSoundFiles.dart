@@ -160,7 +160,9 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             ),
             new BottomNavigationBarItem(
               //Icon for Subscription page
-              icon: Icon(Icons.attach_money),
+              icon: new Image.asset(betalingImage,
+              height: 40,
+              width: 60,),
               title: new Text(''),
             ),
             new BottomNavigationBarItem(

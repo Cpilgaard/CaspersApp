@@ -3,6 +3,7 @@ import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/Profil.dart';
 import 'package:testpust/global_strings.dart';
 import 'ListSoundFiles.dart';
+import 'Subscription.dart';
 
 class DitUdbytte extends StatefulWidget {
   static String tag = 'Formål';
@@ -106,6 +107,10 @@ class DitUdbytteState extends State<DitUdbytte> {
             //Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
             break;
             case 3:
+              // Redirects to Subscription
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                break;
+            case 4:
             // Redirects to Erfaringsgrundlag
             Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
             break;
@@ -130,6 +135,13 @@ class DitUdbytteState extends State<DitUdbytte> {
           new BottomNavigationBarItem(
             //Icon for Formaal page
             icon: new Image.asset(formaalImage,
+              height: 40,
+              width: 60,),
+            title: new Text(''),
+          ),
+          new BottomNavigationBarItem(
+            //Icon for Subscription page
+            icon: new Image.asset(betalingImage,
               height: 40,
               width: 60,),
             title: new Text(''),

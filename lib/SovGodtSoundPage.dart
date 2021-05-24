@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/global_strings.dart';
+import 'Subscription.dart';
 import 'soundfile.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
@@ -107,6 +108,10 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
                 case 3:
+                // Redirects to Subscription
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                  break;
+                case 4:
                 // Redirects to Erfaringsgrundlag
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                   break;
@@ -131,6 +136,13 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
               new BottomNavigationBarItem(
                 //Icon for Formaal page
                 icon: new Image.asset(formaalImage,
+                  height: 40,
+                  width: 60,),
+                title: new Text(''),
+              ),
+              new BottomNavigationBarItem(
+                //Icon for Subscription page
+                icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
                 title: new Text(''),

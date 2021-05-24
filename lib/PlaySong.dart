@@ -1,3 +1,6 @@
+import 'package:testpust/Components.dart';
+
+import 'Subscription.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
@@ -16,6 +19,7 @@ class PlaySong extends StatefulWidget {
 
   final SoundFile soundFile;
 
+
   @override
   _PlaySongState createState() => _PlaySongState(soundFile: this.soundFile);
 }
@@ -26,8 +30,8 @@ class _PlaySongState extends State<PlaySong> {
   AudioPlayer audioPlayer;
   Duration duration;
   Duration position;
-  bool isPlaying = false;
   bool isAdded = false;
+  bool isPlaying = false;
   SharedPreferences prefs;
   DatabaseHelper helper = DatabaseHelper();
 
@@ -228,6 +232,11 @@ class _PlaySongState extends State<PlaySong> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                 break;
                 case 3:
+                // Redirects to Subscription
+                pause();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                  break;
+                case 4:
                   // Redirects to Erfaringsgrundlag
                 pause();
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
@@ -258,6 +267,13 @@ class _PlaySongState extends State<PlaySong> {
                 title: new Text(''),
               ),
               new BottomNavigationBarItem(
+                //Icon for Subscription page
+                icon: new Image.asset(betalingImage,
+                  height: 40,
+                  width: 60,),
+                title: new Text(''),
+              ),
+              new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
@@ -272,8 +288,8 @@ class _PlaySongState extends State<PlaySong> {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
-            onPressed: () { _saveSoundfile(this.soundFile, context);},
-            child: new Image.asset(isAdded ? heartFilled : heartUnFilled),
+            onPressed: () {  _saveSoundfile(this.soundFile, context); },
+            child: new Image.asset(heartFilled ),
             backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
             elevation: 0,
           ),

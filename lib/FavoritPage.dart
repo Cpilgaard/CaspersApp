@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:testpust/Components.dart';
 import 'package:testpust/GodmorgenSoundPage.dart';
 import 'package:testpust/global_strings.dart';
 import 'package:testpust/soundfile.dart';
@@ -10,6 +11,8 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'DatabaseHelper.dart';
 import 'package:testpust/ListSoundFiles.dart';
+
+import 'Subscription.dart';
 
 
 class FavoritPage extends StatefulWidget {
@@ -31,6 +34,7 @@ class _FavoritPageState extends State<FavoritPage>{
   GodmorgenSoundPage godmorgenSoundPage;
   DatabaseHelper databaseHelper = DatabaseHelper();
   List<SoundFile> soundfileList;
+  bool isAdded = false;
   int count = 0;
 
 
@@ -168,6 +172,10 @@ class _FavoritPageState extends State<FavoritPage>{
                     Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                     break;
                   case 3:
+                  // Redirects to Subscription
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                    break;
+                  case 4:
                   // Redirects to Erfaringsgrundlag
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                     break;
@@ -192,6 +200,13 @@ class _FavoritPageState extends State<FavoritPage>{
                 new BottomNavigationBarItem(
                   //Icon for Formaal page
                   icon: new Image.asset(formaalImage,
+                    height: 40,
+                    width: 60,),
+                  title: new Text(''),
+                ),
+                new BottomNavigationBarItem(
+                  //Icon for Subscription page
+                  icon: new Image.asset(betalingImage,
                     height: 40,
                     width: 60,),
                   title: new Text(''),

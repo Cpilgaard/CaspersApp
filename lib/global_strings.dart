@@ -8,6 +8,7 @@ String erfaringsgrundlagImage = 'assets/icons/Erfaringsgrundlag.png';
 String formaalImage = 'assets/icons/Formaal.png';
 String instagramImage = 'assets/icons/Instagram.png';
 String facebookImage = 'assets/icons/Facebook.png';
+String betalingImage = 'assets/icons/betaling.png';
 
 
 //Text / strings
