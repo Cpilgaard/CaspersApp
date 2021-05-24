@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:testpust/Subscription.dart';
-//import 'package:testpust/ListSoundFiles.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
 import 'ListSoundFiles.dart';
 import 'Forside.dart';
+import 'Components.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 
 void main() async {
   // fix screen orientation
@@ -23,4 +24,29 @@ void main() async {
       Forside.tag: (BuildContext context) => new Forside()
     },
   ));
+
+  initPlatformState();
 }
+
+Future<void> initPlatformState() async {
+  appData.isPro = false;
+
+  await Purchases.setDebugLogsEnabled(true);
+  await Purchases.setup("dOiMTGbwsNSDKeVbNgPrixoiWpuHrYhx");
+
+/*  PurchaserInfo purchaserInfo;
+  try {
+  purchaserInfo = await Purchases.getPurchaserInfo();
+  print(purchaserInfo.toString());
+  if (purchaserInfo.entitlements.all['all_features'] != null) {
+  appData.isPro = purchaserInfo.entitlements.all['all_features'].isActive;
+  } else {
+  appData.isPro = false;
+  }
+  } on PlatformException catch (e) {
+  print(e);
+  }*/
+
+  print('#### is user pro? ${appData.isPro}');
+}
+

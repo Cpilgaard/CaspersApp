@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testpust/Components.dart';
+import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
 import 'soundfile.dart';
 import 'DitUdbytte.dart';
@@ -22,8 +24,8 @@ class GodmorgenSoundPage extends StatefulWidget {
 }
 
 class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
-  int index = 0;
   FavoritPage favoritPage;
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,11 +74,11 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      cardGodmorgenSoundFile0(index),
-                      cardGodmorgenSoundFile1(index),
-                      cardGodmorgenSoundFile2(index),
-                      cardGodmorgenSoundFile3(index),
-                      cardGodmorgenSoundFile4(index),
+                      cardGodmorgenSoundFile0(),
+                      cardGodmorgenSoundFile1(),
+                      cardGodmorgenSoundFile2(),
+                      cardGodmorgenSoundFile3(),
+                      cardGodmorgenSoundFile4(),
                     ],
                 ),
                 ),
@@ -148,9 +150,10 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
-  Widget cardGodmorgenSoundFile0(int index) {
+  Widget cardGodmorgenSoundFile0() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+      //: appData.isPro ? 0.8 : 0.2, Hvis user er Pro FULD visning (0,8) ellers gennemsigtig (0,2)
+    color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: Slidable(
           actionPane: SlidableDrawerActionPane(),
            actionExtentRatio: 0.25,
@@ -164,14 +167,23 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                 subtitle: Text(godmorgenSoundFiles[0].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
                 trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              PlaySong(
-                                  soundFile: godmorgenSoundFiles[0]),
-                        )
-                    );
+                    if(appData.isPro)
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                PlaySong(
+                                    soundFile: godmorgenSoundFiles[0]),
+                          )
+                      );
+                    else {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Subscription(),
+                          )
+                      );
+                    }
                   },
           ),
         ),
@@ -190,12 +202,12 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
-  Widget cardGodmorgenSoundFile1(int index) {
+
+  Widget cardGodmorgenSoundFile1() {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: new Container(
           child: ListTile(
-
             title: Text(godmorgenSoundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             leading: CircleAvatar(
               backgroundImage: AssetImage(godmorgenSoundFiles[1].imagepath),
@@ -203,22 +215,22 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
             ),
             subtitle: Text(godmorgenSoundFiles[1].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        PlaySong(
-                            soundFile: godmorgenSoundFiles[1]),
-                  )
-              );
+            onTap: ()  {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PlaySong(
+                              soundFile: godmorgenSoundFiles[1]),
+                    )
+                );
             },
           ),
         )
     );
   }
 
-  Widget cardGodmorgenSoundFile2(int index) {
+  Widget cardGodmorgenSoundFile2() {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: new Container(
@@ -246,7 +258,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
-  Widget cardGodmorgenSoundFile3(int index) {
+  Widget cardGodmorgenSoundFile3() {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: new Container(
@@ -274,7 +286,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     );
   }
 
-  Widget cardGodmorgenSoundFile4(int index) {
+  Widget cardGodmorgenSoundFile4() {
     return new Card(
         color: Color.fromRGBO(241, 242, 245, 0.8),
         child: new Container(
