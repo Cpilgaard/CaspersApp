@@ -1,3 +1,7 @@
+import 'package:flutter/services.dart';
+import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:testpust/Components.dart';
 import 'package:testpust/DagensPusterumSoundPage.dart';
 import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/FrokostSoundPage.dart';
@@ -14,13 +18,17 @@ import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
+
 RateMyApp _rateMyApp = RateMyApp(
   preferencesPrefix: 'rateMyApp_',
   minDays: 0,
   minLaunches: 3,
   remindDays: 1,
-  remindLaunches: 1,
+  remindLaunches: 3,
+  googlePlayIdentifier: 'biegel.DitPusterum',
+  appStoreIdentifier: '1489489646',
 );
+
 
 
 class ListSoundFiles extends StatefulWidget {
@@ -32,6 +40,9 @@ class ListSoundFiles extends StatefulWidget {
 }
 
 class ListSoundFilesState extends State<ListSoundFiles> {
+  Offerings _offerings;
+  PurchaserInfo _purchaserInfo;
+
   int _currentIndex = 0;
   void initState() {
     _rateMyApp.init().then((_) {
@@ -51,7 +62,33 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       }
     });
     super.initState();
+    fetchData();
   }
+
+
+  Future<void> fetchData() async {
+    PurchaserInfo purchaserInfo;
+    try {
+      purchaserInfo = await Purchases.getPurchaserInfo();
+    } on PlatformException catch (e) {
+      print(e);
+    }
+
+
+    Offerings offerings;
+    try {
+      offerings = await Purchases.getOfferings();
+    } on PlatformException catch (e) {
+      print(e);
+    }
+    if (!mounted) return;
+
+    setState(() {
+      _purchaserInfo = purchaserInfo;
+      _offerings = offerings;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +164,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                   break;
               case 3:
               // Redirects to Subscription
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription(offerings: _offerings,)));
                 break;
               case 4:
               // Redirects to Erfaringsgrundlag
