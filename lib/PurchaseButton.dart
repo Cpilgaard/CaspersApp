@@ -3,22 +3,22 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-import 'package:purchases_flutter/package_wrapper.dart';
+//import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
+//import 'package:purchases_flutter/package_wrapper.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:testpust/Components.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
+//import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:testpust/ListSoundFiles.dart';
 
-PurchaserInfo _purchaserInfo;
+//PurchaserInfo _purchaserInfo;
 
 
 class PurchaseButton extends StatefulWidget {
 
 
-  final Package package;
+/*  final Package package;
 
-  PurchaseButton({Key key, @required this.package}) : super(key: key);
+  PurchaseButton({Key key, @required this.package}) : super(key: key);*/
 
   static String tag = 'PurchaseButton';
   @override

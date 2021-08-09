@@ -14,6 +14,7 @@ import 'dart:async';
 import 'DatabaseHelper.dart';
 import 'global_strings.dart';
 
+
 class PlaySong extends StatefulWidget {
   PlaySong({Key key, this.soundFile}) : super(key: key);
 
@@ -284,7 +285,7 @@ class _PlaySongState extends State<PlaySong> {
     ),
         ),
       floatingActionButton: Container(
-        padding: EdgeInsets.only(left: 270, bottom: 350),
+        padding: EdgeInsets.only(left: 270, bottom: 300), //350
         child: Align(
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(

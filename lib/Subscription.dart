@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:testpust/PurchaseButton.dart';
+//import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
+//import 'package:purchases_flutter/purchases_flutter.dart';
+//import 'package:testpust/PurchaseButton.dart';
 import 'package:testpust/global_strings.dart';
 import 'DitUdbytte.dart';
 import 'Profil.dart';
@@ -15,8 +15,8 @@ class Subscription extends StatefulWidget {
 
   static String tag = 'Subscription';
 
-  final Offerings offerings;
-  Subscription({Key key, @required this.offerings}) : super(key: key);
+ // final Offerings offerings;
+ //Subscription({Key key, @required this.offerings}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -25,15 +25,15 @@ class Subscription extends StatefulWidget {
 }
 
 class SubscriptionState extends State<Subscription> {
-  StreamSubscription _conectionSubscription;
+//  StreamSubscription _conectionSubscription;
 
   @override
   void initState() {
     super.initState();
-    asyncInitState(); // async is not allowed on initState() directly
+   // asyncInitState(); // async is not allowed on initState() directly
   }
 
-  @override
+/*  @override
   void dispose() {
     if (_conectionSubscription != null) {
       _conectionSubscription.cancel();
@@ -46,12 +46,12 @@ class SubscriptionState extends State<Subscription> {
     _conectionSubscription = FlutterInappPurchase.connectionUpdated.listen((connected) {
       print('connected: $connected');
     });
-  }
+  }*/
 
 
   @override
   Widget build(BuildContext context) {
-    if (widget.offerings != null) {
+/*    if (widget.offerings != null) {
       print('offeringS is not null');
       print(widget.offerings.current.toString());
       print('--');
@@ -59,7 +59,7 @@ class SubscriptionState extends State<Subscription> {
       final offering = widget.offerings.current;
       if (offering != null) {
         final monthly = offering.monthly;
-        if (monthly != null) {
+        if (monthly != null) {*/
           return Scaffold(
               appBar: AppBar(
                   title: Text('Abonnement'),
@@ -129,7 +129,7 @@ class SubscriptionState extends State<Subscription> {
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
-                                Container(
+                                /*Container(
                                   width: 350,
                                   padding: EdgeInsets.fromLTRB(20, 5, 20, 20),
                                   color: Color.fromRGBO(241, 242, 245, 0.6),
@@ -147,7 +147,7 @@ class SubscriptionState extends State<Subscription> {
                                     child: new Text("KØB",
                                       style: TextStyle(color: Colors.white),),
                                   ),
-                                ),
+                                ),*/
                                 Container(
                                   padding: EdgeInsets.fromLTRB(20, 2, 20, 20),
                                   color: Color.fromRGBO(241, 242, 245, 0.6),
@@ -242,8 +242,8 @@ class SubscriptionState extends State<Subscription> {
           );
         }
       }
-    }
-  }
+  //  }
+ // }
 
 
   launchURL(String string) async {
@@ -254,5 +254,3 @@ class SubscriptionState extends State<Subscription> {
       throw 'Could not launch $url';
     }
   }
-
-}
