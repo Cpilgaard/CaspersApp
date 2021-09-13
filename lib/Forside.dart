@@ -36,7 +36,7 @@ class ForsideState extends State<Forside> {
           rateButton: 'BEDØM',
           noButton: 'NEJ TAK',
           laterButton: 'MÅSKE SENERE',
-          ignoreIOS: false,
+          //ignoreIOS: false,
           dialogStyle: DialogStyle(),
         );
       }

@@ -56,7 +56,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
           rateButton: 'BEDØM',
           noButton: 'NEJ TAK',
           laterButton: 'MÅSKE SENERE',
-          ignoreIOS: false,
+          //ignoreIOS: false,
           dialogStyle: DialogStyle(),
         );
       }

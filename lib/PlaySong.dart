@@ -55,21 +55,29 @@ class _PlaySongState extends State<PlaySong> {
     play();
 
 
-    audioPlayer.durationHandler = (d) => setState(() {
-          duration = d;
-        });
+    audioPlayer.onDurationChanged.listen((Duration d) {
+    print('Max duration: $d');
+    setState(() => duration = d);
+    });
 
-    audioPlayer.positionHandler = (p) => setState(() {
+    //audioPlayer.durationHandler = (d) => setState(() {
+      //    duration = d;
+        //});
+
+
+
+   audioPlayer.onAudioPositionChanged.listen((Duration p) => setState(() {
           position = p;
           prefs.setInt(soundFile.title, position.inSeconds);
-          if (duration.inSeconds == position.inSeconds) {
+         if (duration.inSeconds == position.inSeconds) {
             setState(() {
               position = new Duration(seconds: 0);
               pause();
             });
             audioPlayer.seek(position);
           }
-        });
+        })
+        );
   }
 
   Future setupPref() async {
