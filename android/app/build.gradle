@@ -40,6 +40,11 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        configurations.all {
+            resolutionStrategy {
+                force 'androidx.window:window-java:1.0.0-alpha10'
+            }
+        }
    }
 
     signingConfigs {

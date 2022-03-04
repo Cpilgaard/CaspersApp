@@ -42,10 +42,10 @@ class _PurchaseButtonState extends State<PurchaseButton> {
                 onPressed: () async {
                   try {
                     print('now  trying to purchase');
-                    _purchaserInfo = await Purchases.purchasePackage(widget.package);
+  //                  _purchaserInfo = await Purchases.purchasePackage(widget.package);
                     print('purchase completed');
 
-                    appData.isPro = _purchaserInfo.entitlements.all["all_features"].isActive;
+    //                appData.isPro = _purchaserInfo.entitlements.all["all_features"].isActive;
 
                     print('is user pro? ${appData.isPro}');
 
@@ -124,12 +124,14 @@ class _PurchaseButtonState extends State<PurchaseButton> {
                     }
                   } on PlatformException catch (e) {
                     print('----xx-----');
+                    /*
                     var errorCode = PurchasesErrorHelper.getErrorCode(e);
                     if (errorCode == PurchasesErrorCode.purchaseCancelledError) {
                       print("User cancelled");
                     } else if (errorCode == PurchasesErrorCode.purchaseNotAllowedError) {
                       print("User not allowed to purchase");
                     }
+                     */
                     Alert(
                       context: context,
                       style: kWelcomeAlertStyle,
@@ -183,21 +185,23 @@ class _PurchaseButtonState extends State<PurchaseButton> {
                     ),
                   ),
                   padding: const EdgeInsets.all(10.0),
-                  child: Text(
+    /*              child: Text(
                     'Buy ${widget.package.product.title}\n${widget.package.product.priceString}',
                     style: TextStyle(fontSize: 20),
                     textAlign: TextAlign.center,
                   ),
+      */
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0, bottom: 18.0),
-              child: Text(
+        /*      child: Text(
                 '${widget.package.product.description}',
                 textAlign: TextAlign.center,
                 style: kSendButtonTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.normal),
               ),
+         */
             )
           ],
         ),
