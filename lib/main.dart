@@ -6,20 +6,19 @@ import 'Profil.dart';
 import 'ListSoundFiles.dart';
 import 'Forside.dart';
 import 'Components.dart';
-//import 'PurchaseButton.dart';
-//import 'package:purchases_flutter/purchases_flutter.dart';
-
+import 'PurchaseButton.dart';
+import 'Subscription.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 
 
 void main() async {
 
-  /*Package package;
-  Offerings offering;*/
+  Package package;
+  Offerings offering;
 
   // fix screen orientation
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
   
   runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -28,9 +27,9 @@ void main() async {
       DitUdbytte.tag: (BuildContext context) => new DitUdbytte(),
       ListSoundFiles.tag: (BuildContext context) => new ListSoundFiles(),
       Erfaringsgrundlag.tag: (BuildContext context) => new Erfaringsgrundlag(),
-      //Subscription.tag: (BuildContext context) => new Subscription(),
+      Subscription.tag: (BuildContext context) => new Subscription(),
       Forside.tag: (BuildContext context) => new Forside(),
-      //PurchaseButton.tag: (BuildContext context) => new PurchaseButton()
+      PurchaseButton.tag: (BuildContext context) => new PurchaseButton()
     },
   ));
 
@@ -40,12 +39,12 @@ void main() async {
 Future<void> initPlatformState() async {
   appData.isPro = false;
 
-/*  await Purchases.setDebugLogsEnabled(true);
-  await Purchases.setup("dOiMTGbwsNSDKeVbNgPrixoiWpuHrYhx");*/
+  await Purchases.setDebugLogsEnabled(true);
+  //await Purchases.setup("something");
+  //await Purchases.setup("goog_XlWNKchCLcdgboXRfJlFOaOSmgo");
+  await Purchases.setup("dOiMTGbwsNSDKeVbNgPrixoiWpuHrYhx");
 
-
-
-  /*PurchaserInfo purchaserInfo;
+  PurchaserInfo purchaserInfo;
   try {
   purchaserInfo = await Purchases.getPurchaserInfo();
   print(purchaserInfo.toString());
@@ -58,6 +57,7 @@ Future<void> initPlatformState() async {
   print(e);
   }
 
-  print('#### is user pro? ${appData.isPro}');*/
+  print('#### is user pro? ${appData.isPro}');
+  print(purchaserInfo);
 }
 
