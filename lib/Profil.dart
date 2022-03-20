@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/global_strings.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'DitUdbytte.dart';
 import 'ListSoundFiles.dart';
 import 'Subscription.dart';
@@ -109,10 +110,12 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                //TODO Redirect to Facebook
+                //Redirects to Facebook
+                  launchURL(facebookURL);
                   break;
                 case 1:
-                //TODO Redirect to Instagram
+                //Redirects to Instagram
+                  launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -124,7 +127,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                   break;
                 case 4:
                   // Redirects to Erfaringsgrundlag
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                   break;
               }
             },
@@ -169,6 +172,15 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           ),
         )
     );
+  }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 

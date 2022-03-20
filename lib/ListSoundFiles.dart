@@ -12,6 +12,7 @@ import 'package:testpust/SovGodtSoundPage.dart';
 import 'package:testpust/StopOpSoundPage.dart';
 //import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
+import 'Subscription.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
@@ -162,10 +163,10 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 // Redirects to Dit Udbytte / Formål
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
-/*              case 3:
+              case 3:
               // Redirects to Subscription
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
-                break;*/
+                break;
               case 4:
               // Redirects to Erfaringsgrundlag
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
