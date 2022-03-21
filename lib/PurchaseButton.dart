@@ -1,3 +1,4 @@
+/*
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -16,9 +17,11 @@ import 'package:testpust/ListSoundFiles.dart';
 class PurchaseButton extends StatefulWidget {
 
 
+*/
 /*  final Package package;
 
-  PurchaseButton({Key key, @required this.package}) : super(key: key);*/
+  PurchaseButton({Key key, @required this.package}) : super(key: key);*//*
+
 
   static String tag = 'PurchaseButton';
   @override
@@ -227,4 +230,4 @@ class _PurchaseButtonState extends State<PurchaseButton> {
     fontWeight: FontWeight.bold,
     fontSize: 20,
   );
-}
+}*/

@@ -28,7 +28,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Frokost'),
+            title: Text('Dagens pusterum'),
             actions: <Widget>[
               IconButton(
                 icon: new Image.asset(heartFilledAppBarImage),
@@ -309,17 +309,17 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 }
 
 List<SoundFile> dagensPusterumSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
+  SoundFile('music/Godmorgen.mp3', "assets/images/DagensPusterum.png", "Giv dig selv plads",
+      "En siddende afspændingsøvelse \n" + "14:00 min"),
+  SoundFile("music/Frokostpausen.mp3", "assets/images/DagensPusterum.png",
+      "Kom i kontakt med dit åndedræt", "En liggende afspændingsøvelse \n" + "13:29 min"),
   SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+      "Lad dit blik hvile", "En siddende afspændingsøvelse \n" + "9:11 min"),
+  SoundFile("music/StopopV1.1.mp3", "assets/images/DagensPusterum.png", "Tid til dig",
+      "En liggende progressiv afspændingsøvelse \n" + "12:37 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/SovgodtV1.1.mp3", "assets/images/DagensPusterum.png", "Forny din energi",
+      "En liggende visualiseringsøvelse \n" + "13:15 min"),
 ];
 
 

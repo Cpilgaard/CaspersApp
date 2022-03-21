@@ -310,17 +310,17 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 }
 
 List<SoundFile> sovGodtSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Godmorgen.mp3', 'assets/images/SovGodt.png', "En naturlig søvn",
+      "En liggende afspændingsøvelse \n" + "22:17 min"),
+  SoundFile("music/Frokostpausen.mp3", "assets/images/SovGodt.png",
+      "Find ro til din søvn", "En liggende afspændingsøvelse \n" + "19:23 min"),
+  SoundFile("music/DagensPusterum.mp3", "assets/images/SovGodt.png",
+      "Den gode søvn", "En liggende afspændingsøvelse \n" + "22:17 min"),
+  SoundFile("music/StopopV1.1.mp3", "assets/images/SovGodt.png", "Find ro i dine tanker",
+      "En liggende afspændingsøvelse \n" + "29:53 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Slip dagen i dag",
+      "En liggende drømmerejse \n" + "20:25 min"),
 ];
 
 

@@ -310,17 +310,17 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 }
 
 List<SoundFile> stopOpSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Godmorgen.mp3', 'assets/images/StopOp.png', "En rolig vejrtrækning",
+      "En liggende afspændingsøvelse \n" + "17:06 min"),
+  SoundFile("music/Frokostpausen.mp3", "assets/images/StopOp.png",
+      "Kom ned i tempo", "En liggende afspændingsøvelse \n" + "15:33 min"),
+  SoundFile("music/DagensPusterum.mp3", "assets/images/StopOp.png",
+      "En nænsom pause", "En siddende udendørs afspændingsøvelse \n" + "12:07 min"),
+  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Balance i hverdagen",
+      "En liggende afspændingsøvelse \n" + "17:34 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/SovgodtV1.1.mp3", "assets/images/StopOp.png", "Kom til stede i dig selv",
+      "En liggende progressiv afspænding  \n" + "14:35 min"),
 ];
 
 

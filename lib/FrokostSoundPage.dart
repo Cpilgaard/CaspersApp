@@ -310,17 +310,17 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 }
 
 List<SoundFile> frokostSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
+  SoundFile('music/Godmorgen.mp3', "assets/images/FrokostPausen.png", "Giv dig selv en pause",
+      "En gående udendørs afspændingsøvelse (8:58 min)"),
   SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+      "Forkæl dig selv med en pause", "En gående udendørs afspændingsøvelse (16:02 min)"),
+  SoundFile("music/DagensPusterum.mp3", "assets/images/FrokostPausen.png",
+      "Slip dagens opgaver", "En gående udendørs afspændingsøvelse (10:26 min)"),
+  SoundFile("music/StopopV1.1.mp3", "assets/images/FrokostPausen.png", "En stille stund i et roligt tempo",
+      "En gående udendørs afspændingsøvelse (12:31 min)"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/SovgodtV1.1.mp3", "assets/images/FrokostPausen.png", "Giv plads til alt det gode",
+      "En gående udendørs afspændingsøvelse (10:20 min)"),
 ];
 
 

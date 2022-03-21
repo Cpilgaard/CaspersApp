@@ -165,9 +165,6 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
     return new Card(
       //: appData.isPro ? 0.8 : 0.2, Hvis user er Pro FULD visning (0,8) ellers gennemsigtig (0,2)
     color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
-        child: Slidable(
-          actionPane: SlidableDrawerActionPane(),
-           actionExtentRatio: 0.25,
             child: new Container(
               child: ListTile(
                 title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -197,18 +194,6 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                     }
                   },
           ),
-        ),
-          actions: <Widget>[
-            new IconSlideAction(
-              caption: "Tilføj til Favorit",
-              color: Color.fromRGBO(241, 242, 245, 0.8),
-                icon: Icons.ac_unit,
-              onTap: () {
-                setState(() {
-                });
-                }
-            ),
-          ],
         ),
     );
   }
@@ -336,17 +321,17 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 }
 
 List<SoundFile> godmorgenSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Græs mellem tæerne",
+      "En stående udendørs afspændingsøvelse \n" + "8:42 min"),
+  SoundFile("music/Frokostpausen.mp3", 'assets/images/Godmorgen.png',
+      "Bliv under dynen", "En liggende afspændingsøvelse \n" + "14:30 min"),
+  SoundFile("music/DagensPusterum.mp3", 'assets/images/Godmorgen.png',
+      "En rolig start på dagen", "En siddende afspændingsøvelse \n" + "5:03 min"),
+  SoundFile("music/StopopV1.1.mp3", 'assets/images/Godmorgen.png', "En kærlig start",
+      "En stående visualiseringsøvelse \n" + "9:44 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/SovgodtV1.1.mp3", 'assets/images/Godmorgen.png', "En stille morgen",
+      "En siddende visualiseringsøvelse \n" + "10:54 min"),
 ];
 
 
