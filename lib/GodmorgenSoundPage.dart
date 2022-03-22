@@ -321,16 +321,16 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
 List<SoundFile> godmorgenSoundFiles = [
   SoundFile('music/Godmorgen1.mp3', 'assets/images/Godmorgen.png', "Græs mellem tæerne",
-      "En stående udendørs afspændingsøvelse \n" + "8:42 min"),
+      "En stående udendørs afspændingsøvelse 8:42 min"),
   SoundFile("music/Godmorgen2.mp3", 'assets/images/Godmorgen.png',
-      "Bliv under dynen", "En liggende afspændingsøvelse \n" + "14:30 min"),
+      "Bliv under dynen", "En liggende afspændingsøvelse 14:30 min"),
   SoundFile("music/Godmorgen3.mp3", 'assets/images/Godmorgen.png',
-      "En rolig start på dagen", "En siddende afspændingsøvelse \n" + "5:03 min"),
+      "En rolig start på dagen", "En siddende afspændingsøvelse 5:03 min"),
   SoundFile("music/Godmorgen4.mp3", 'assets/images/Godmorgen.png', "En kærlig start",
-      "En stående visualiseringsøvelse \n" + "9:44 min"),
+      "En stående visualiseringsøvelse 9:44 min"),
   SoundFile(
       "music/Godmorgen5.mp3", 'assets/images/Godmorgen.png', "En stille morgen",
-      "En siddende visualiseringsøvelse \n" + "10:54 min"),
+      "En siddende visualiseringsøvelse 10:54 min"),
 ];
 
 
