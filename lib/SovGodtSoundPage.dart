@@ -311,16 +311,16 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
 List<SoundFile> sovGodtSoundFiles = [
   SoundFile('music/Sovgodt1.mp3', 'assets/images/SovGodt.png', "En naturlig søvn",
-      "En liggende afspændingsøvelse \n" + "22:17 min"),
+      "En liggende afspændingsøvelse 22:17 min"),
   SoundFile("music/Sovgodt2.mp3", "assets/images/SovGodt.png",
-      "Find ro til din søvn", "En liggende afspændingsøvelse \n" + "19:23 min"),
+      "Find ro til din søvn", "En liggende afspændingsøvelse 19:23 min"),
   SoundFile("music/Sovgodt3.mp3", "assets/images/SovGodt.png",
-      "Den gode søvn", "En liggende afspændingsøvelse \n" + "22:17 min"),
+      "Den gode søvn", "En liggende afspændingsøvelse 22:17 min"),
   SoundFile("music/Sovgodt4.mp3", "assets/images/SovGodt.png", "Find ro i dine tanker",
-      "En liggende afspændingsøvelse \n" + "29:53 min"),
+      "En liggende afspændingsøvelse 29:53 min"),
   SoundFile(
       "music/Sovgodt5.mp3", "assets/images/SovGodt.png", "Slip dagen i dag",
-      "En liggende drømmerejse \n" + "20:25 min"),
+      "En liggende drømmerejse 20:25 min"),
 ];
 
 
