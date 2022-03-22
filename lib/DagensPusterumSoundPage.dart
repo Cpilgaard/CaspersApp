@@ -309,16 +309,16 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 }
 
 List<SoundFile> dagensPusterumSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', "assets/images/DagensPusterum.png", "Giv dig selv plads",
+  SoundFile('music/Dagenspusterum1.mp3', "assets/images/DagensPusterum.png", "Giv dig selv plads",
       "En siddende afspændingsøvelse \n" + "14:00 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/DagensPusterum.png",
+  SoundFile("music/Dagenspusterum2.mp3", "assets/images/DagensPusterum.png",
       "Kom i kontakt med dit åndedræt", "En liggende afspændingsøvelse \n" + "13:29 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
+  SoundFile("music/Dagenspusterum3.mp3", "assets/images/DagensPusterum.png",
       "Lad dit blik hvile", "En siddende afspændingsøvelse \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/DagensPusterum.png", "Tid til dig",
+  SoundFile("music/Dagenspusterum4.mp3", "assets/images/DagensPusterum.png", "Tid til dig",
       "En liggende progressiv afspændingsøvelse \n" + "12:37 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/DagensPusterum.png", "Forny din energi",
+      "music/Dagenspusterum5.mp3", "assets/images/DagensPusterum.png", "Forny din energi",
       "En liggende visualiseringsøvelse \n" + "13:15 min"),
 ];
 
