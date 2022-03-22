@@ -311,16 +311,16 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
 List<SoundFile> stopOpSoundFiles = [
   SoundFile('music/Stopop1.mp3', 'assets/images/StopOp.png', "En rolig vejrtrækning",
-      "En liggende afspændingsøvelse \n" + "17:06 min"),
+      "En liggende afspændingsøvelse 17:06 min"),
   SoundFile("music/Stopop2.mp3", "assets/images/StopOp.png",
-      "Kom ned i tempo", "En liggende afspændingsøvelse \n" + "15:33 min"),
+      "Kom ned i tempo", "En liggende afspændingsøvelse 15:33 min"),
   SoundFile("music/Stopop3.mp3", "assets/images/StopOp.png",
-      "En nænsom pause", "En siddende udendørs afspændingsøvelse \n" + "12:07 min"),
+      "En nænsom pause", "En siddende udendørs afspændingsøvelse 12:07 min"),
   SoundFile("music/Stopop4.mp3", "assets/images/StopOp.png", "Balance i hverdagen",
-      "En liggende afspændingsøvelse \n" + "17:34 min"),
+      "En liggende afspændingsøvelse 17:34 min"),
   SoundFile(
       "music/Stopop5.mp3", "assets/images/StopOp.png", "Kom til stede i dig selv",
-      "En liggende progressiv afspænding  \n" + "14:35 min"),
+      "En liggende progressiv afspænding 14:35 min"),
 ];
 
 
