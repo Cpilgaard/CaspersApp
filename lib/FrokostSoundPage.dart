@@ -29,7 +29,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Frokost'),
+            title: Text('Frokostpausen'),
             actions: <Widget>[
               IconButton(
                 icon: new Image.asset(heartFilledAppBarImage),
