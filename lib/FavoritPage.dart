@@ -242,33 +242,4 @@ class _FavoritPageState extends State<FavoritPage>{
     updateListView();
   }
 
-
-
-    /*Widget _cardGodmorgenSoundFile1( ) {
-      return new Card(
-          color: Color.fromRGBO(241, 242, 245, 0.8),
-          child: new Container(
-            child: ListTile(
-                title: Text("Godmorgen2"),
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/CupWhite.png'),
-                ),
-                subtitle: Text("Stående afspænding \n" + "11:27 min"),
-                trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            PlaySong(
-                                soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
-                                    "Stående afspænding \n" + "11:27 min") ),
-                      )
-                  );
-                }
-
-            ),
-          )
-      );
-    }*/
   }
