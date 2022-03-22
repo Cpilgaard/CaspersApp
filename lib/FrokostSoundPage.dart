@@ -124,35 +124,35 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                title: Text(''),
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
                   icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
-                  title: new Text('')
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                label: ''
               ),
             ],
           ),

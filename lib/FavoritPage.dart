@@ -11,6 +11,7 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'DatabaseHelper.dart';
 import 'package:testpust/ListSoundFiles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'Subscription.dart';
 
@@ -121,31 +122,6 @@ class _FavoritPageState extends State<FavoritPage>{
                             },
                             key: UniqueKey()
                           );
-/*                        return Card(
-                          color: Color.fromRGBO(241, 242, 245, 0.8),
-                            child: new ListTile(
-                              title: Text(this.soundfileList[index].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-                              leading: CircleAvatar(
-                                backgroundImage: AssetImage(this.soundfileList[index].imagepath),
-
-                              ),
-                              subtitle: Text(this.soundfileList[index].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          PlaySong(
-                                              soundFile: this.soundfileList[index]),
-                                    )
-                                );
-                              },
-                              onLongPress: () {
-                                _deleteSoundfileFromDB(index);
-                              },
-                        )
-                        );*/
                         },
                       ),
                     ),
@@ -162,10 +138,10 @@ class _FavoritPageState extends State<FavoritPage>{
               onTap: (int index) {
                 switch(index){
                   case 0:
-                  //TODO Redirect to Facebook
+                  launchURL(facebookURL);
                     break;
                   case 1:
-                  //TODO Redirect to Instagram
+                  launchURL(instagramURL);
                     break;
                   case 2:
                   // Redirects to Dit Udbytte / Formål
@@ -188,35 +164,35 @@ class _FavoritPageState extends State<FavoritPage>{
                   icon: new Image.asset(facebookImage,
                     height: 40,
                     width: 60,),
-                  title: Text(''),
+                  label:''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Instagram
                     icon: new Image.asset(instagramImage,
                       height: 40,
                       width: 60,),
-                    title: new Text('')
+                    label: ''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Formaal page
                   icon: new Image.asset(formaalImage,
                     height: 40,
                     width: 60,),
-                  title: new Text(''),
+                  label: ''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Subscription page
                   icon: new Image.asset(betalingImage,
                     height: 40,
                     width: 60,),
-                  title: new Text(''),
+                  label: ''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Erfaringsgrundlag page
                   icon: new Image.asset(erfaringsgrundlagImage,
                     height: 40,
                     width: 60,),
-                  title: new Text(''),
+                  label: ''
                 ),
               ],
             ),
@@ -240,6 +216,15 @@ class _FavoritPageState extends State<FavoritPage>{
   void _deleteSoundfileFromDB(int index) async {
     await databaseHelper.deleteSoundfile(this.soundfileList[index].id);
     updateListView();
+  }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   }

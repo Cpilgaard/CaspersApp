@@ -4,6 +4,8 @@ import 'package:testpust/Profil.dart';
 import 'package:testpust/global_strings.dart';
 import 'ListSoundFiles.dart';
 import 'Subscription.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class DitUdbytte extends StatefulWidget {
   static String tag = 'Formål';
@@ -32,7 +34,6 @@ class DitUdbytteState extends State<DitUdbytte> {
             },
           ),
           IconButton(
-            //TODO Indsæt hus
             icon: Icon(Icons.home, size: 35, color: Color.fromRGBO(142, 210, 238, 1.0)),
             //icon: new Image.asset(heartFilledAppBarImage,),
             onPressed: () {
@@ -97,10 +98,10 @@ class DitUdbytteState extends State<DitUdbytte> {
             onTap: (int index) {
             switch(index){
             case 0:
-            //TODO Redirect to Facebook
+            launchURL(facebookURL);
             break;
             case 1:
-            //TODO Redirect to Instagram
+            launchURL(instagramURL);
             break;
             case 2:
             // Redirects to Dit Udbytte / Formål
@@ -158,4 +159,13 @@ class DitUdbytteState extends State<DitUdbytte> {
       )
       );
     }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   }

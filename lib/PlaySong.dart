@@ -13,6 +13,8 @@ import 'ListSoundFiles.dart';
 import 'dart:async';
 import 'DatabaseHelper.dart';
 import 'global_strings.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class PlaySong extends StatefulWidget {
@@ -143,6 +145,7 @@ class _PlaySongState extends State<PlaySong> {
                               radius: 30,),
                               new Text(
                                 soundFile.title,
+                                textAlign: TextAlign.center,
                                 style: new TextStyle(fontSize: 24.0, color: Color.fromRGBO(46, 91, 140, 1)),
                               ),
                               new Padding(
@@ -220,11 +223,11 @@ class _PlaySongState extends State<PlaySong> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                  //TODO Redirect to Facebook
+                  launchURL(facebookURL);
                 pause();
                 break;
                 case 1:
-                  //TODO Redirect to Instagram
+                  launch(instagramURL);
                 pause();
                 break;
                 case 2:
@@ -313,5 +316,14 @@ class _PlaySongState extends State<PlaySong> {
         context: context,
         builder: (_) => alertDialog
     );
+  }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

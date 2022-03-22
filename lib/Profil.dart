@@ -4,6 +4,8 @@ import 'package:testpust/global_strings.dart';
 import 'DitUdbytte.dart';
 import 'ListSoundFiles.dart';
 import 'Subscription.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class Erfaringsgrundlag extends StatefulWidget {
@@ -109,10 +111,10 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                //TODO Redirect to Facebook
+                launchURL(facebookURL);
                   break;
                 case 1:
-                //TODO Redirect to Instagram
+                launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
@@ -169,6 +171,15 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           ),
         )
     );
+  }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 
