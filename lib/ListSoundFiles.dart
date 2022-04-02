@@ -12,6 +12,7 @@ import 'package:testpust/SovGodtSoundPage.dart';
 import 'package:testpust/StopOpSoundPage.dart';
 //import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
+import 'Components.dart';
 import 'Subscription.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
@@ -220,31 +221,40 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardGodmorgen() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: new Container(
           child: ListTile(
-              title: Text(soundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-              leading: CircleAvatar(
+              title: Text(soundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))), leading: CircleAvatar(
                 backgroundImage: AssetImage(soundFiles[0].imagepath),
 
               ),
               subtitle: Text("Guidede afspændingsøvelser til den gode start på dagen", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
               trailing: Icon(Icons.keyboard_arrow_right),
-            onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(
-                  builder: (context) => GodmorgenSoundPage()
-                )
-                );
-            },
-          ),
+              onTap: () {
+                if (appData.isPro) {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context) => GodmorgenSoundPage()
+                  )
+                  );
+                }
+                else {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Subscription(),
+                      )
+                  );
+                }
+              }
+          )
         )
     );
   }
 
   Widget _cardFrokostpausen() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -255,11 +265,21 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             subtitle: Text("Guidede afspændingsøvelser under åben himmel", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(
-                  builder: (context) => FrokostSoundPage()
-              )
-              );
+              if(appData.isPro) {
+                Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context) => FrokostSoundPage()
+                )
+                );
+              }
+              else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Subscription(),
+                    )
+                );
+              }
             },
           ),
         )
@@ -268,7 +288,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardDagensPusterum() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[2].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -279,11 +299,21 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             subtitle: Text("Guidede afspændingsøvelser til alle tidspunkter på din dag", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(
-                  builder: (context) => DagensPusterumSoundPage()
-              )
-              );
+              if(appData.isPro) {
+                Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context) => DagensPusterumSoundPage()
+                )
+                );
+              }
+              else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Subscription(),
+                    )
+                );
+              }
             },
           ),
         )
@@ -292,7 +322,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardStopOp() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[3].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -303,11 +333,21 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             subtitle: Text("Guidede afspændingsøvelser til når din krop er stresset", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(
-                  builder: (context) => StopOpSoundPage()
-              )
-              );
+              if(appData.isPro) {
+                Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context) => StopOpSoundPage()
+                )
+                );
+              }
+              else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Subscription(),
+                    )
+                );
+              }
             },
           ),
         )
@@ -316,7 +356,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardSovGodt() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[4].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -327,11 +367,21 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             subtitle: Text("Guidede afspændingsøvelser til en god og naturlig søvn", style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(
-                  builder: (context) => SovGodtSoundPage()
-              )
-              );
+              if(appData.isPro) {
+                Navigator.push(
+                    context, MaterialPageRoute(
+                    builder: (context) => SovGodtSoundPage()
+                )
+                );
+              }
+              else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Subscription(),
+                    )
+                );
+              }
             },
           ),
         )
