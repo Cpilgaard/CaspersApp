@@ -51,7 +51,6 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(

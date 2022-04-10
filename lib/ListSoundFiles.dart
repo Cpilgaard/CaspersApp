@@ -1,7 +1,3 @@
-import 'package:flutter/services.dart';
-//import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-//import 'package:purchases_flutter/purchases_flutter.dart';
-//import 'package:testpust/Components.dart';
 import 'package:testpust/DagensPusterumSoundPage.dart';
 import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/FrokostSoundPage.dart';
@@ -10,9 +6,9 @@ import 'package:testpust/Profil.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/SovGodtSoundPage.dart';
 import 'package:testpust/StopOpSoundPage.dart';
-//import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
 import 'soundfile.dart';
+import 'Subscription.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -40,8 +36,6 @@ class ListSoundFiles extends StatefulWidget {
 }
 
 class ListSoundFilesState extends State<ListSoundFiles> {
-/*  Offerings _offerings;
-  PurchaserInfo _purchaserInfo;*/
 
   int _currentIndex = 0;
   void initState() {
@@ -62,32 +56,10 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       }
     });
     super.initState();
-    //fetchData();
   }
 
 
- /* Future<void> fetchData() async {
-    PurchaserInfo purchaserInfo;
-    try {
-      purchaserInfo = await Purchases.getPurchaserInfo();
-    } on PlatformException catch (e) {
-      print(e);
-    }
 
-
-    Offerings offerings;
-    try {
-      offerings = await Purchases.getOfferings();
-    } on PlatformException catch (e) {
-      print(e);
-    }
-    if (!mounted) return;
-
-    setState(() {
-      _purchaserInfo = purchaserInfo;
-      _offerings = offerings;
-    });
-  }*/
 
 
   @override
@@ -162,10 +134,10 @@ class ListSoundFilesState extends State<ListSoundFiles> {
                 // Redirects to Dit Udbytte / Formål
                   Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
-/*              case 3:
+              case 3:
               // Redirects to Subscription
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
-                break;*/
+                break;
               case 4:
               // Redirects to Erfaringsgrundlag
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));

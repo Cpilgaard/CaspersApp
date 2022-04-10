@@ -1,5 +1,3 @@
-import 'package:testpust/Components.dart';
-
 import 'Subscription.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
@@ -288,12 +286,12 @@ class _PlaySongState extends State<PlaySong> {
     ),
         ),
       floatingActionButton: Container(
-        padding: EdgeInsets.only(left: 270, bottom: 300), //350
+        padding: EdgeInsets.only(left: 270, bottom: 350), //350
         child: Align(
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
             onPressed: () {  _saveSoundfile(this.soundFile, context); },
-            child: new Image.asset(heartFilled ),
+            child: new Image.asset(heartFilled),
             backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
             elevation: 0,
           ),
