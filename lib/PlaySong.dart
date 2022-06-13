@@ -129,13 +129,13 @@ class _PlaySongState extends State<PlaySong> {
             child: new Center(
                 child: new Container(
                     padding: EdgeInsets.all(5.0),
-                    color: Color.fromRGBO(241, 242, 245, 0.4),
+                    color: Color.fromRGBO(241, 242, 245, 0.55),
                     height: 400,
                     width: 350,
                     child: new Center(
                         child: new Container(
                           padding: EdgeInsets.all(5.0),
-                          color: Color.fromRGBO(241, 242, 245, 0.4),
+                          color: Color.fromRGBO(241, 242, 245, 0.55),
                           height: 325,
                           width: 325,
                             child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: [

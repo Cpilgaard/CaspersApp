@@ -75,7 +75,7 @@ class _FavoritPageState extends State<FavoritPage>{
               child: new Center(
                 child: new Container(
                   padding: EdgeInsets.all(5.0),
-                  color: Color.fromRGBO(241, 242, 245, 0.4),
+                  color: Color.fromRGBO(241, 242, 245, 0.55),
                   height: 400,
                   width: 350,
                   child: new Center(
@@ -84,7 +84,7 @@ class _FavoritPageState extends State<FavoritPage>{
                         itemBuilder: (context, index) {
                           return Dismissible(
                             child: Card(
-                                color: Color.fromRGBO(241, 242, 245, 0.8),
+                                color: Color.fromRGBO(241, 242, 245, 0.9),
                                 child: new ListTile(
                                   title: Text(this.soundfileList[index].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
                                   leading: CircleAvatar(

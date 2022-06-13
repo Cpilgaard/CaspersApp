@@ -57,7 +57,7 @@ class DitUdbytteState extends State<DitUdbytte> {
           child: new Center(
             child: new Container(
               padding: EdgeInsets.all(20.0),
-              color: Color.fromRGBO(241, 242, 245, 0.4),
+              color: Color.fromRGBO(241, 242, 245, 0.55),
               height: 425,
               width: 350,
               child: new Center(
@@ -68,7 +68,7 @@ class DitUdbytteState extends State<DitUdbytte> {
                       //SizedBox(height: 55),
                       Container(
                         padding: EdgeInsets.all(15),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        color: Color.fromRGBO(241, 242, 245, 0.9),
                         child: RichText(
                           text: TextSpan(
                             text: "Dit Pusterum" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),

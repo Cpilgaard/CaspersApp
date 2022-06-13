@@ -65,7 +65,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -161,7 +161,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(frokostSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -188,7 +188,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -216,7 +216,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -244,7 +244,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -272,7 +272,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 

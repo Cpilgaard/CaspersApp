@@ -65,7 +65,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -161,8 +161,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile0() {
     return new Card(
-      //: appData.isPro ? 0.8 : 0.2, Hvis user er Pro FULD visning (0,8) ellers gennemsigtig (0,2)
-    color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
+            color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -199,7 +198,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile1() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(godmorgenSoundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -226,7 +225,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile2() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -254,7 +253,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile3() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -282,7 +281,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile4() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 

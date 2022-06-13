@@ -64,7 +64,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -160,7 +160,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(dagensPusterumSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -187,7 +187,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -215,7 +215,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -243,7 +243,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -271,7 +271,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 

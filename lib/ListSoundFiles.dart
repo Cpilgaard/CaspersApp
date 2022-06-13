@@ -91,7 +91,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(255, 255, 255, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -191,7 +191,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardGodmorgen() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
               title: Text(soundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -215,7 +215,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardFrokostpausen() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -239,7 +239,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardDagensPusterum() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[2].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -263,7 +263,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardStopOp() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[3].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -287,7 +287,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
 
   Widget _cardSovGodt() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(soundFiles[4].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),

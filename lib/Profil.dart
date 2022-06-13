@@ -62,7 +62,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           child: new Center(
             child: new Container(
               padding: EdgeInsets.all(20.0),
-              color: Color.fromRGBO(241, 242, 245, 0.4),
+              color: Color.fromRGBO(241, 242, 245, 0.55),
               height: 425,
               width: 350,
               child: new Center(
@@ -72,12 +72,12 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        color: Color.fromRGBO(241, 242, 245, 0.9),
                         child: new Image.asset(marleneImage, height: 250, width: 300, alignment: Alignment(x,y))
                       ),
                       Container(
                         padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        color: Color.fromRGBO(241, 242, 245, 0.9),
                         child: RichText(
                           text: TextSpan(
                               text: "Beskrivelse" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
