@@ -20,6 +20,6 @@ String profileText = "\nIdeen til denne app udspringer af mit mangeårige virke 
 String subscriptionText = "Dette abonnement har ingen binding, du kan opsige når som helst. Dog senest dagen før hver fornyelsesdato som er den sidste dag i hver måned.\n\nAbonnementet fornyes automatisk indtil det opsiges.\n\n14 dages fortrydelsesret, fortryd dit køb her.";
 String contactInfo = "Marlene Biegel \n" + "Mail: biegel@mail.dk";
 String marleneImage = 'assets/images/MarleneNy.png';
-String instagramURL = 'https://www.instagram.com/marlene_biegel/';
-String facebookURL = 'https://www.facebook.com/casper.pilgaard'; //TODO ændr til Marlenes side.
+String instagramURL = 'https://www.instagram.com/biegels_latin_dance_fitness/';
+String facebookURL = 'https://www.facebook.com/biegels';
 

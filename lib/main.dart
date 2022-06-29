@@ -46,15 +46,15 @@ Future<void> initPlatformState() async {
 
   PurchaserInfo purchaserInfo;
   try {
-  purchaserInfo = await Purchases.getPurchaserInfo();
-  print(purchaserInfo.toString());
-  if (purchaserInfo.entitlements.all['all_features'] != null) {
-  appData.isPro = purchaserInfo.entitlements.all['all_features'].isActive;
-  } else {
-  appData.isPro = false;
-  }
+    purchaserInfo = await Purchases.getPurchaserInfo();
+    print(purchaserInfo.toString());
+    if (purchaserInfo.entitlements.all['all_features'] != null) {
+      appData.isPro = purchaserInfo.entitlements.all['all_features'].isActive;
+    } else {
+      appData.isPro = false;
+    }
   } on PlatformException catch (e) {
-  print(e);
+    print(e);
   }
 
   print('#### is user pro? ${appData.isPro}');
