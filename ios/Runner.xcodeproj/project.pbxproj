@@ -390,7 +390,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 4.8;
-				PRODUCT_BUNDLE_IDENTIFIER = testpust5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.testpust;
 				PRODUCT_NAME = "Dit Pusterum";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -517,7 +517,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 4.8;
-				PRODUCT_BUNDLE_IDENTIFIER = testpust5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.testpust;
 				PRODUCT_NAME = "Dit Pusterum";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -542,7 +542,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MARKETING_VERSION = 4.8;
-				PRODUCT_BUNDLE_IDENTIFIER = testpust5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.testpust;
 				PRODUCT_NAME = "Dit Pusterum";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
