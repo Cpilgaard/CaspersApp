@@ -28,7 +28,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Frokost'),
+            title: Text('Dagens pusterum'),
             actions: <Widget>[
               IconButton(
                 icon: new Image.asset(heartFilledAppBarImage),
@@ -51,7 +51,6 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
@@ -65,7 +64,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -137,21 +136,21 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
             ],
           ),
@@ -161,7 +160,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(dagensPusterumSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -188,7 +187,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -216,7 +215,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -244,7 +243,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -272,7 +271,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 
   Widget cardDagensPusterumSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -309,17 +308,17 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
 }
 
 List<SoundFile> dagensPusterumSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Dagenspusterum1.mp3', "assets/images/DagensPusterum.png", "Giv dig selv plads",
+      "En siddende afspændingsøvelse 14:00 min"),
+  SoundFile("music/Dagenspusterum2.mp3", "assets/images/DagensPusterum.png",
+      "Kom i kontakt med dit åndedræt", "En liggende afspændingsøvelse 13:29 min"),
+  SoundFile("music/Dagenspusterum3.mp3", "assets/images/DagensPusterum.png",
+      "Lad dit blik hvile", "En siddende afspændingsøvelse 9:11 min"),
+  SoundFile("music/Dagenspusterum4.mp3", "assets/images/DagensPusterum.png", "Tid til dig",
+      "En liggende progressiv afspændingsøvelse 12:37 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/Dagenspusterum5.mp3", "assets/images/DagensPusterum.png", "Forny din energi",
+      "En liggende visualiseringsøvelse 13:15 min"),
 ];
 
 

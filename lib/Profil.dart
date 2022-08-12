@@ -5,6 +5,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'DitUdbytte.dart';
 import 'ListSoundFiles.dart';
 import 'Subscription.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class Erfaringsgrundlag extends StatefulWidget {
@@ -61,7 +63,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
           child: new Center(
             child: new Container(
               padding: EdgeInsets.all(20.0),
-              color: Color.fromRGBO(241, 242, 245, 0.4),
+              color: Color.fromRGBO(241, 242, 245, 0.55),
               height: 425,
               width: 350,
               child: new Center(
@@ -71,12 +73,12 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        color: Color.fromRGBO(241, 242, 245, 0.9),
                         child: new Image.asset(marleneImage, height: 250, width: 300, alignment: Alignment(x,y))
                       ),
                       Container(
                         padding: EdgeInsets.all(20),
-                        color: Color.fromRGBO(241, 242, 245, 0.6),
+                        color: Color.fromRGBO(241, 242, 245, 0.9),
                         child: RichText(
                           text: TextSpan(
                               text: "Beskrivelse" , style: TextStyle(color: Color.fromRGBO(46, 91, 140, 1), fontSize: 20),
@@ -110,16 +112,14 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                //Redirects to Facebook
                   launchURL(facebookURL);
                   break;
                 case 1:
-                //Redirects to Instagram
                   launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
                 case 3:
                 // Redirects to Subscription

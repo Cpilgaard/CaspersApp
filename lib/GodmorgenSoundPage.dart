@@ -7,7 +7,6 @@ import 'DitUdbytte.dart';
 import 'Profil.dart';
 import 'PlaySong.dart';
 import 'FavoritPage.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'ListSoundFiles.dart';
 
@@ -50,7 +49,6 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
@@ -64,7 +62,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -129,7 +127,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
-                label: ''
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
@@ -160,11 +158,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile0() {
     return new Card(
-      //: appData.isPro ? 0.8 : 0.2, Hvis user er Pro FULD visning (0,8) ellers gennemsigtig (0,2)
-    color: appData.isPro ? Color.fromRGBO(241, 242, 245, 0.8) : Color.fromRGBO(241, 242, 245, 0.25) ,
-        child: Slidable(
-          actionPane: SlidableDrawerActionPane(),
-           actionExtentRatio: 0.25,
+            color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(godmorgenSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -195,25 +189,13 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                   },
           ),
         ),
-          actions: <Widget>[
-            new IconSlideAction(
-              caption: "Tilføj til Favorit",
-              color: Color.fromRGBO(241, 242, 245, 0.8),
-                icon: Icons.ac_unit,
-              onTap: () {
-                setState(() {
-                });
-                }
-            ),
-          ],
-        ),
     );
   }
 
 
   Widget cardGodmorgenSoundFile1() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
             title: Text(godmorgenSoundFiles[1].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -240,7 +222,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile2() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -268,7 +250,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile3() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -296,7 +278,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 
   Widget cardGodmorgenSoundFile4() {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -333,17 +315,17 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
 }
 
 List<SoundFile> godmorgenSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Godmorgen1.mp3', 'assets/images/Godmorgen.png', "Græs mellem tæerne",
+      "En stående udendørs afspændingsøvelse 8:42 min"),
+  SoundFile("music/Godmorgen2.mp3", 'assets/images/Godmorgen.png',
+      "Bliv under dynen", "En liggende afspændingsøvelse 14:30 min"),
+  SoundFile("music/Godmorgen3.mp3", 'assets/images/Godmorgen.png',
+      "En rolig start på dagen", "En siddende afspændingsøvelse 5:03 min"),
+  SoundFile("music/Godmorgen4.mp3", 'assets/images/Godmorgen.png', "En kærlig start",
+      "En stående visualiseringsøvelse 9:44 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/Godmorgen5.mp3", 'assets/images/Godmorgen.png', "En stille morgen",
+      "En siddende visualiseringsøvelse 10:54 min"),
 ];
 
 

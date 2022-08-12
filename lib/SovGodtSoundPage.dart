@@ -52,7 +52,6 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
@@ -66,7 +65,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -162,7 +161,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
   Widget cardSovGodtSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(sovGodtSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -189,7 +188,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
   Widget cardSovGodtSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -217,7 +216,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
   Widget cardSovGodtSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -245,7 +244,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
   Widget cardSovGodtSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -273,7 +272,7 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 
   Widget cardSovGodtSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -310,17 +309,17 @@ class SovGodtSoundPageState extends State<SovGodtSoundPage>{
 }
 
 List<SoundFile> sovGodtSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Sovgodt1.mp3', 'assets/images/SovGodt.png', "En naturlig søvn",
+      "En liggende afspændingsøvelse 22:17 min"),
+  SoundFile("music/Sovgodt2.mp3", "assets/images/SovGodt.png",
+      "Find ro til din søvn", "En liggende afspændingsøvelse 19:23 min"),
+  SoundFile("music/Sovgodt3.mp3", "assets/images/SovGodt.png",
+      "Den gode søvn", "En liggende afspændingsøvelse 22:17 min"),
+  SoundFile("music/Sovgodt4.mp3", "assets/images/SovGodt.png", "Find ro i dine tanker",
+      "En liggende afspændingsøvelse 29:53 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/Sovgodt5.mp3", "assets/images/SovGodt.png", "Slip dagen i dag",
+      "En liggende drømmerejse 20:25 min"),
 ];
 
 

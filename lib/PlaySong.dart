@@ -1,5 +1,3 @@
-import 'package:testpust/Components.dart';
-
 import 'Subscription.dart';
 import 'soundfile.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +11,8 @@ import 'ListSoundFiles.dart';
 import 'dart:async';
 import 'DatabaseHelper.dart';
 import 'global_strings.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 class PlaySong extends StatefulWidget {
@@ -129,13 +129,13 @@ class _PlaySongState extends State<PlaySong> {
             child: new Center(
                 child: new Container(
                     padding: EdgeInsets.all(5.0),
-                    color: Color.fromRGBO(241, 242, 245, 0.4),
+                    color: Color.fromRGBO(241, 242, 245, 0.55),
                     height: 400,
                     width: 350,
                     child: new Center(
                         child: new Container(
                           padding: EdgeInsets.all(5.0),
-                          color: Color.fromRGBO(241, 242, 245, 0.4),
+                          color: Color.fromRGBO(241, 242, 245, 0.55),
                           height: 325,
                           width: 325,
                             child: new Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -143,6 +143,7 @@ class _PlaySongState extends State<PlaySong> {
                               radius: 30,),
                               new Text(
                                 soundFile.title,
+                                textAlign: TextAlign.center,
                                 style: new TextStyle(fontSize: 24.0, color: Color.fromRGBO(46, 91, 140, 1)),
                               ),
                               new Padding(
@@ -220,11 +221,11 @@ class _PlaySongState extends State<PlaySong> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                  //TODO Redirect to Facebook
+                  launchURL(facebookURL);
                 pause();
                 break;
                 case 1:
-                  //TODO Redirect to Instagram
+                  launch(instagramURL);
                 pause();
                 break;
                 case 2:
@@ -285,12 +286,12 @@ class _PlaySongState extends State<PlaySong> {
     ),
         ),
       floatingActionButton: Container(
-        padding: EdgeInsets.only(left: 270, bottom: 300), //350
+        padding: EdgeInsets.only(left: 270, bottom: 350), //350
         child: Align(
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
             onPressed: () {  _saveSoundfile(this.soundFile, context); },
-            child: new Image.asset(heartFilled ),
+            child: new Image.asset(heartFilled),
             backgroundColor: Color.fromRGBO(241, 242, 245, 0.2),
             elevation: 0,
           ),
@@ -313,5 +314,14 @@ class _PlaySongState extends State<PlaySong> {
         context: context,
         builder: (_) => alertDialog
     );
+  }
+
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

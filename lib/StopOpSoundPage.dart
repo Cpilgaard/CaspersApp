@@ -52,7 +52,6 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
@@ -66,7 +65,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -124,7 +123,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
@@ -138,21 +137,21 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: '',
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: '',
               ),
             ],
           ),
@@ -162,7 +161,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
   Widget cardStopOpSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(stopOpSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -189,7 +188,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
   Widget cardStopOpSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -217,7 +216,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
   Widget cardStopOpSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -245,7 +244,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
   Widget cardStopOpSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -273,7 +272,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 
   Widget cardStopOpSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -310,17 +309,17 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
 }
 
 List<SoundFile> stopOpSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Stopop1.mp3', 'assets/images/StopOp.png', "En rolig vejrtrækning",
+      "En liggende afspændingsøvelse 17:06 min"),
+  SoundFile("music/Stopop2.mp3", "assets/images/StopOp.png",
+      "Kom ned i tempo", "En liggende afspændingsøvelse 15:33 min"),
+  SoundFile("music/Stopop3.mp3", "assets/images/StopOp.png",
+      "En nænsom pause", "En siddende udendørs afspændingsøvelse 12:07 min"),
+  SoundFile("music/Stopop4.mp3", "assets/images/StopOp.png", "Balance i hverdagen",
+      "En liggende afspændingsøvelse 17:34 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/Stopop5.mp3", "assets/images/StopOp.png", "Kom til stede i dig selv",
+      "En liggende progressiv afspænding 14:35 min"),
 ];
 
 

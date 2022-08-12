@@ -11,6 +11,7 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'DatabaseHelper.dart';
 import 'package:testpust/ListSoundFiles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'Subscription.dart';
 
@@ -61,7 +62,6 @@ class _FavoritPageState extends State<FavoritPage>{
                   },
                 )
               ],
-              //TODO add backgroundColor and opacity. What colour should the text be?
               backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
           ),
           body: new Container(
@@ -75,7 +75,7 @@ class _FavoritPageState extends State<FavoritPage>{
               child: new Center(
                 child: new Container(
                   padding: EdgeInsets.all(5.0),
-                  color: Color.fromRGBO(241, 242, 245, 0.4),
+                  color: Color.fromRGBO(241, 242, 245, 0.55),
                   height: 400,
                   width: 350,
                   child: new Center(
@@ -84,7 +84,7 @@ class _FavoritPageState extends State<FavoritPage>{
                         itemBuilder: (context, index) {
                           return Dismissible(
                             child: Card(
-                                color: Color.fromRGBO(241, 242, 245, 0.8),
+                                color: Color.fromRGBO(241, 242, 245, 0.9),
                                 child: new ListTile(
                                   title: Text(this.soundfileList[index].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
                                   leading: CircleAvatar(
@@ -121,31 +121,6 @@ class _FavoritPageState extends State<FavoritPage>{
                             },
                             key: UniqueKey()
                           );
-/*                        return Card(
-                          color: Color.fromRGBO(241, 242, 245, 0.8),
-                            child: new ListTile(
-                              title: Text(this.soundfileList[index].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-                              leading: CircleAvatar(
-                                backgroundImage: AssetImage(this.soundfileList[index].imagepath),
-
-                              ),
-                              subtitle: Text(this.soundfileList[index].description, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
-                              trailing: Icon(Icons.keyboard_arrow_right),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          PlaySong(
-                                              soundFile: this.soundfileList[index]),
-                                    )
-                                );
-                              },
-                              onLongPress: () {
-                                _deleteSoundfileFromDB(index);
-                              },
-                        )
-                        );*/
                         },
                       ),
                     ),
@@ -162,10 +137,10 @@ class _FavoritPageState extends State<FavoritPage>{
               onTap: (int index) {
                 switch(index){
                   case 0:
-                  //TODO Redirect to Facebook
+                  launchURL(facebookURL);
                     break;
                   case 1:
-                  //TODO Redirect to Instagram
+                  launchURL(instagramURL);
                     break;
                   case 2:
                   // Redirects to Dit Udbytte / Formål
@@ -188,7 +163,7 @@ class _FavoritPageState extends State<FavoritPage>{
                   icon: new Image.asset(facebookImage,
                     height: 40,
                     width: 60,),
-                    label: ''
+                  label:''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Instagram
@@ -202,21 +177,21 @@ class _FavoritPageState extends State<FavoritPage>{
                   icon: new Image.asset(formaalImage,
                     height: 40,
                     width: 60,),
-                    label: ''
+                  label: ''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Subscription page
                   icon: new Image.asset(betalingImage,
                     height: 40,
                     width: 60,),
-                    label: ''
+                  label: ''
                 ),
                 new BottomNavigationBarItem(
                   //Icon for Erfaringsgrundlag page
                   icon: new Image.asset(erfaringsgrundlagImage,
                     height: 40,
                     width: 60,),
-                    label: ''
+                  label: ''
                 ),
               ],
             ),
@@ -242,33 +217,13 @@ class _FavoritPageState extends State<FavoritPage>{
     updateListView();
   }
 
+  launchURL(String string) async {
+    String url = string;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
-
-    /*Widget _cardGodmorgenSoundFile1( ) {
-      return new Card(
-          color: Color.fromRGBO(241, 242, 245, 0.8),
-          child: new Container(
-            child: ListTile(
-                title: Text("Godmorgen2"),
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/CupWhite.png'),
-                ),
-                subtitle: Text("Stående afspænding \n" + "11:27 min"),
-                trailing: Icon(Icons.keyboard_arrow_right),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            PlaySong(
-                                soundFile: SoundFile('music/Godmorgen.mp3', 'assets/images/CupWhite.png', "Godmorgen",
-                                    "Stående afspænding \n" + "11:27 min") ),
-                      )
-                  );
-                }
-
-            ),
-          )
-      );
-    }*/
   }

@@ -29,7 +29,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Frokost'),
+            title: Text('Frokostpausen'),
             actions: <Widget>[
               IconButton(
                 icon: new Image.asset(heartFilledAppBarImage),
@@ -52,7 +52,6 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
                 },
               )
             ],
-            //TODO add backgroundColor and opacity. What colour should the text be?
             backgroundColor: Color.fromRGBO(48, 121, 169, 1.0 )
         ),
         body: new Container(
@@ -66,7 +65,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5.0),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(241, 242, 245, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -124,7 +123,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
@@ -138,21 +137,21 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                  label: ''
+                label: ''
               ),
             ],
           ),
@@ -162,7 +161,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile0(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
             child: new Container(
               child: ListTile(
                 title: Text(frokostSoundFiles[0].title, style: new TextStyle(color: Color.fromRGBO(46, 91, 140, 1))),
@@ -189,7 +188,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile1(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -217,7 +216,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile2(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -245,7 +244,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile3(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -273,7 +272,7 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 
   Widget cardFrokostSoundFile4(int index) {
     return new Card(
-        color: Color.fromRGBO(241, 242, 245, 0.8),
+        color: Color.fromRGBO(241, 242, 245, 0.9),
         child: new Container(
           child: ListTile(
 
@@ -310,17 +309,17 @@ class FrokostSoundPageState extends State<FrokostSoundPage>{
 }
 
 List<SoundFile> frokostSoundFiles = [
-  SoundFile('music/Godmorgen.mp3', 'assets/images/Godmorgen.png', "Godmorgen",
-      "Stående afspænding \n" + "11:27 min"),
-  SoundFile("music/Frokostpausen.mp3", "assets/images/FrokostPausen.png",
-      "Frokostpausen", "Gående afspænding \n" + "10:52 min"),
-  SoundFile("music/DagensPusterum.mp3", "assets/images/DagensPusterum.png",
-      "Dagens pusterum", "Siddende afspænding \n" + "9:11 min"),
-  SoundFile("music/StopopV1.1.mp3", "assets/images/StopOp.png", "Stop op",
-      "Liggende afspænding \n" + "12:11 min"),
+  SoundFile('music/Frokostpausen1.mp3', "assets/images/FrokostPausen.png", "Giv dig selv en pause",
+      "En gående udendørs afspændingsøvelse 8:58 min"),
+  SoundFile("music/Frokostpausen2.mp3", "assets/images/FrokostPausen.png",
+      "Forkæl dig selv med en pause", "En gående udendørs afspændingsøvelse 16:02 min"),
+  SoundFile("music/Frokostpausen3.mp3", "assets/images/FrokostPausen.png",
+      "Slip dagens opgaver", "En gående udendørs afspændingsøvelse 10:26 min"),
+  SoundFile("music/Frokostpausen4.mp3", "assets/images/FrokostPausen.png", "En stille stund i et roligt tempo",
+      "En gående udendørs afspændingsøvelse 12:31 min"),
   SoundFile(
-      "music/SovgodtV1.1.mp3", "assets/images/SovGodt.png", "Sov godt",
-      "Liggende afspænding \n" + "12:16 min"),
+      "music/Frokostpausen5.mp3", "assets/images/FrokostPausen.png", "Giv plads til alt det gode",
+      "En gående udendørs afspændingsøvelse 10:20 min"),
 ];
 
 

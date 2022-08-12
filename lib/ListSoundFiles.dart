@@ -1,7 +1,3 @@
-import 'package:flutter/services.dart';
-//import 'package:flutter_inapp_purchase/flutter_inapp_purchase.dart';
-//import 'package:purchases_flutter/purchases_flutter.dart';
-//import 'package:testpust/Components.dart';
 import 'package:testpust/DagensPusterumSoundPage.dart';
 import 'package:testpust/DitUdbytte.dart';
 import 'package:testpust/FrokostSoundPage.dart';
@@ -10,11 +6,11 @@ import 'package:testpust/Profil.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/SovGodtSoundPage.dart';
 import 'package:testpust/StopOpSoundPage.dart';
-//import 'package:testpust/Subscription.dart';
 import 'package:testpust/global_strings.dart';
 import 'Components.dart';
 import 'Subscription.dart';
 import 'soundfile.dart';
+import 'Subscription.dart';
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -42,8 +38,6 @@ class ListSoundFiles extends StatefulWidget {
 }
 
 class ListSoundFilesState extends State<ListSoundFiles> {
-/*  Offerings _offerings;
-  PurchaserInfo _purchaserInfo;*/
 
   int _currentIndex = 0;
   void initState() {
@@ -64,32 +58,10 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       }
     });
     super.initState();
-    //fetchData();
   }
 
 
- /* Future<void> fetchData() async {
-    PurchaserInfo purchaserInfo;
-    try {
-      purchaserInfo = await Purchases.getPurchaserInfo();
-    } on PlatformException catch (e) {
-      print(e);
-    }
 
-
-    Offerings offerings;
-    try {
-      offerings = await Purchases.getOfferings();
-    } on PlatformException catch (e) {
-      print(e);
-    }
-    if (!mounted) return;
-
-    setState(() {
-      _purchaserInfo = purchaserInfo;
-      _offerings = offerings;
-    });
-  }*/
 
 
   @override
@@ -121,7 +93,7 @@ class ListSoundFilesState extends State<ListSoundFiles> {
             child: new Center(
               child: new Container(
                 padding: EdgeInsets.all(5),
-                color: Color.fromRGBO(241, 242, 245, 0.4),
+                color: Color.fromRGBO(255, 255, 255, 0.55),
                 height: 400,
                 width: 350,
                 child: new Center(
@@ -396,6 +368,8 @@ class ListSoundFilesState extends State<ListSoundFiles> {
       throw 'Could not launch $url';
     }
   }
+
+
 }
 
   List<SoundFile> soundFiles = [
