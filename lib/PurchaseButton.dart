@@ -1,4 +1,3 @@
-/*
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -204,4 +203,4 @@ class _PurchaseButtonState extends State<PurchaseButton> {
     fontWeight: FontWeight.bold,
     fontSize: 20,
   );
-}*/
+}
