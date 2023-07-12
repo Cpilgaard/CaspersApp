@@ -17,9 +17,6 @@ class GodmorgenSoundPage extends StatefulWidget {
   State<StatefulWidget> createState() {
     return GodmorgenSoundPageState();
   }
-
-
-
 }
 
 class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
@@ -123,7 +120,7 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
@@ -137,21 +134,21 @@ class GodmorgenSoundPageState extends State<GodmorgenSoundPage>{
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
             ],
           ),

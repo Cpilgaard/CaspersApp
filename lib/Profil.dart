@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testpust/FavoritPage.dart';
 import 'package:testpust/global_strings.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'DitUdbytte.dart';
 import 'ListSoundFiles.dart';
 import 'Subscription.dart';
@@ -111,14 +112,14 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
             onTap: (int index) {
               switch(index){
                 case 0:
-                launchURL(facebookURL);
+                  launchURL(facebookURL);
                   break;
                 case 1:
-                launchURL(instagramURL);
+                  launchURL(instagramURL);
                   break;
                 case 2:
                 // Redirects to Dit Udbytte / Formål
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DitUdbytte()));
                   break;
                 case 3:
                 // Redirects to Subscription
@@ -126,7 +127,7 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                   break;
                 case 4:
                   // Redirects to Erfaringsgrundlag
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Erfaringsgrundlag()));
                   break;
               }
             },
@@ -137,35 +138,35 @@ class ErfaringsgrundlagState extends State<Erfaringsgrundlag> {
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                title: Text(''),
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
                   icon: new Image.asset(instagramImage,
                     height: 40,
                     width: 60,),
-                  title: new Text('')
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Formaal page
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page
                 icon: new Image.asset(betalingImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                  label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Erfaringsgrundlag page
                 icon: new Image.asset(erfaringsgrundlagImage,
                   height: 40,
                   width: 60,),
-                title: new Text(''),
+                  label: ''
               ),
             ],
           ),

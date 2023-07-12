@@ -123,7 +123,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
@@ -137,7 +137,7 @@ class StopOpSoundPageState extends State<StopOpSoundPage>{
                 icon: new Image.asset(formaalImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Subscription page

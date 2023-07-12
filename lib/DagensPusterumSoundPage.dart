@@ -122,7 +122,7 @@ class DagensPusterumSoundPageState extends State<DagensPusterumSoundPage>{
                 icon: new Image.asset(facebookImage,
                   height: 40,
                   width: 60,),
-                label: '',
+                label: ''
               ),
               new BottomNavigationBarItem(
                 //Icon for Instagram
